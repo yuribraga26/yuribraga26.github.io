@@ -1,0 +1,413 @@
+PROMPT FOR AI WEBSITE BUILDER
+0) Project Summary
+
+Create a fast, accessible, single-owner personal portfolio for Yuri Braga — computer engineer and CareFuse co-founder — focused on:
+
+Healthcare ML (explainable logistic models for TKA vs. conservative care, calibrated and propensity-weighted, AUC ≈ 0.87 via 50 multi-seed holdout runs, API-ready for insurer audits),
+
+Embedded/robotics work (DeWALT, TREC Lab, CMAR),
+
+Leadership & campus involvement (VT ECE Ambassadors; Cru, BYX; club soccer),
+
+A compelling personal story (soccer injury resilience essay) that ties into patient safety and MCID-first philosophy.
+
+The site must feel clean, professional, and recruitable, with simple visual polish, strong readability, and clear CTAs.
+
+1) Tech & Delivery Requirements
+
+Stack (preferred): Next.js 14 + TypeScript, Tailwind CSS, shadcn/ui, Vercel deploy, React Server Components where sensible.
+
+Design system:
+
+Fonts: Inter for UI, Merriweather or Source Serif Pro for long-form (Personal Life page).
+
+Color palette: neutral slate/stone grays with warm accents; optional maroon/orange accent (subtle, VT-inspired).
+
+Components: responsive Nav, Hero, Stat (AUC/validation), Timeline, Card, FeatureList, Testimonial/Quote, ContactForm.
+
+Performance & a11y:
+
+CLS < 0.05, LCP < 2.5s on 4G; images lazy-loaded, next/image; color-contrast AA+; semantic landmarks; skip-to-content.
+
+SEO & Analytics:
+
+Dynamic meta per page, Open Graph, JSON-LD Person + Organization (CareFuse); sitemap.xml, robots.txt; basic analytics (Vercel/GA4).
+
+Content management: Keep content in JSON/MDX for easy edits; no backend required for launch.
+
+Contact form: static handler with formspree or serverless function (validations + spam honeypot).
+
+Assets placeholders: headshot, company logos (generic), PDF resume links (we will upload).
+
+2) Sitemap & Routing
+
+/ Home (hero + highlights + cross-links)
+
+/about About Yuri (short bio + values + CTA)
+
+/carefuse CareFuse (product, models, metrics, insurer integration)
+
+/dewalt DeWALT internship (firmware/PCB/testing)
+
+/trec TREC Lab (terrestrial robotics work)
+
+/cmar CMAR (marine autonomy + sonar work)
+
+/academics VT Academics (degree path, GPA, coursework, research)
+
+/ece-ambassadors VT ECE Ambassadors (role, outreach, videos)
+
+/campus-involvement (Cru at VT, BYX, club soccer)
+
+/personal Personal Life (soccer-injury essay + life philosophy)
+
+/contact Contact (email, form)
+
+/resume auto-downloads resume PDF(s)
+
+Global footer: email, phone +1 (540) 998-4267, LinkedIn, GitHub; small privacy note.
+
+3) Global Header (Top of Every Page)
+
+Name: Yuri Braga
+
+Title tagline: Computer Engineer • Co-founder, CareFuse • ML for Patient-Safe Decisions
+
+Short stats row (reusable component):
+
+AUC ≈ 0.87 (50 multi-seed holdout)
+
+Calibrated LR (Platt / isotonic)
+
+Propensity-score weighting
+
+API-ready for insurer audits
+
+4) Reusable “Accomplishments Summary” (for Home/About)
+
+Core themes
+
+Co-founder & ML Lead, CareFuse: built explainable, calibrated logistic models to predict TKA success vs conservative care; AUC ≈ 0.87 with 50 multi-seed holdout tests; deployed via FastAPI + Docker with schema validation, thresholds, SHAP explanations; integrated outputs into insurer audit workflows.
+
+Embedded/Robotics:
+
+DeWALT (Stanley Black & Decker): designed relay/driver/thermocouple test fixture; automated 3-phase H-bridge tests in embedded C; custom Altium PCB; reduced test cycle by ~4 hours.
+
+TREC Lab: sensor shield design, CAN messaging, encoder interfaces (quadrature/absolute).
+
+CMAR: Bayesian obstacle detection prototype (MATLAB→ROS), drivers for multibeam sonar backseat interface.
+
+Leadership & Outreach: VT ECE Ambassadors (student recruitment videos, advice), ECE 2564 UTA; Cru at VT, BYX, SHPE, IEEE; club soccer participation. 
+ece.vt.edu
+YouTube
+YouTube
+IMLeagues
++1
+
+Academics: VT B.S. Computer Engineering (Software Systems), GPA 3.8/4.0; initiated accelerated UG-to-MS coursework; 3 years of undergraduate research (robotics/autonomy).
+
+5) Page-by-Page Content (COPY INCLUDED)
+/ HOME
+
+Hero
+
+H1: Patient-safe AI, grounded in calibration and clarity.
+
+Subtext: I build explainable models to help clinicians and insurers avoid unnecessary risk — and help patients get the care that truly benefits them.
+
+CTA buttons: Contact • See CareFuse • Download Resume
+
+Highlights (cards)
+
+CareFuse outcomes — Calibrated LR, AUC ≈ 0.87 (50 multi-seed), SHAP explanations, insurer audit integration.
+
+Embedded to Autonomy — From DeWALT test fixtures & PCBs to TREC & CMAR robotics and sonar pipelines.
+
+Leadership & Community — ECE Ambassadors outreach; Cru, BYX; club soccer teamwork. 
+ece.vt.edu
+
+Quote
+
+“Surgery should prove benefit before we accept its risks. MCID-first thinking protects patients.”
+
+/about
+
+Short bio (150–200 words) connecting engineering + medicine; raised by doctors; mission to defend patients’ well-being with explainable, calibrated ML; belief in MCID-first decision logic (default null: surgery won’t reach MCID unless evidence shows otherwise).
+
+Values list
+
+Patient safety over model vanity metrics
+
+Explainability for shared decision-making
+
+Calibration, propensity weighting, and CI reporting
+
+Ship robustly: schemas, versioned models, reproducible APIs
+
+/carefuse
+
+Section: What CareFuse Does (patient-first)
+
+Plain English: We predict whether a patient is likely to achieve a meaningful clinical improvement (MCID) after Total Knee Arthroplasty (TKA) vs a conservative pathway.
+
+If low chance of MCID with TKA, we highlight safer conservative options; if high chance, we convey expected benefit and risks.
+
+Section: Model Design (reader-friendly bullets)
+
+Dual-arm models: TKA vs Conservative
+
+Features: age, BMI, baseline WOMAC subscales, ratios/derived features (see resume)
+
+Propensity-score weighting to reduce confounding
+
+Calibration: Platt (TKA) and isotonic (Conservative)
+
+Thresholds: optimized by Youden’s J with transparent reporting
+
+Validation: 50 multi-seed holdout + repeated CV; report AUC, Brier, ECE, cal slope/intercept
+
+AUC ≈ 0.87 (TKA), robust CIs; SHAP-based top contributors
+
+Deployment: Dockerized FastAPI, schema-validated inputs, saved thresholds, and JSON responses consumable by insurer audit systems.
+
+Section: Example Output (mock JSON)
+
+{
+  "patient_id": "demo-123",
+  "arm": "TKA",
+  "p_success_mcid": 0.78,
+  "threshold": 0.326,
+  "decision": "Recommend TKA (expected MCID achieved)",
+  "top_factors": [
+    {"feature": "Baseline_WOMAC_PAIN", "direction": "higher -> more improvement expected"},
+    {"feature": "CESD", "direction": "lower -> more improvement expected"},
+    {"feature": "BMI", "direction": "moderate -> favorable"}
+  ],
+  "notes": "Calibrated via Platt; CI available on request"
+}
+
+
+Section: For Insurers
+
+“Audit-ready” traceability, schema validation, versioned artifacts, threshold files, and explanation payloads for QA reviews.
+
+/dewalt
+
+Title: Stanley Black & Decker (DeWALT) — Electrical Engineering Intern
+Copy: Built a relay/driver/thermocouple test fixture and automated 3-phase H-bridge testing in embedded C; designed a custom Altium PCB integrating comms + power; cut test cycle by ~4 hours.
+Tech chips: Embedded C, Altium, oscilloscopes/JTAG, CAN/UART/SPI/I²C.
+
+/trec
+
+Title: Terrestrial Robotics Engineering & Controls (TREC) Lab
+Copy: Sensor shield for force acquisition, filtering/calibration; CAN messaging; encoder interfaces (quadrature/absolute). Emphasis on reliable data capture for mechatronic systems.
+Visual: timeline of contributions, a small gallery. (References to TREC as the VT terrestrial robotics lab.) 
+Facebook
+Virginia Tech Engineering
+
+/cmar
+
+Title: Center for Marine Autonomy & Robotics (CMAR)
+Copy: Prototyped Bayesian obstacle detection in MATLAB with ROS integration; developed drivers for multibeam sonar backseat interface; worked within VT CMAR’s focus on autonomous marine vehicles and sensing. 
+marinerobotics.centers.vt.edu
+autonomyandrobotics.centers.vt.edu
+
+/academics
+
+Program: B.S. Computer Engineering (Software Systems), Virginia Tech; GPA 3.8/4.0; accelerated UG-to-MS coursework initiated.
+Research: 3 years in robotics/autonomy (TREC/CMAR).
+Coursework highlights: Embedded systems, signals, controls/robotics, algorithms, ML.
+Awards/roles: ECE 2564 UTA; ECE Ambassadors.
+
+/ece-ambassadors
+
+What it is: VT program for outreach/recruitment; Yuri featured in videos and student spotlights.
+Your role: Ambassador and mentor; created short advice/experience content; core org member.
+Reference: Public ECE ambassadors page shows your profile with orgs (Cru, BYX, SHPE, IEEE) and experiences (DeWALT, CMAR, TREC, UTA). Include links to a couple of short VT videos. 
+ece.vt.edu
+YouTube
+YouTube
+
+/campus-involvement
+
+Cru at Virginia Tech: Christian community focused on faith, service, mentorship, and leadership.
+BYX (Beta Upsilon Chi): Faith-based fraternity emphasizing brotherhood, service, and character.
+Soccer: Active in club soccer / IMLeagues; team tournaments and travel; lessons in resilience, teamwork, and strategy. (We found public IMLeagues entries naming you on rosters/leaderboards.) 
+IMLeagues
++1
+
+/personal
+
+Long-form story: Use the provided essay as the backbone, with tasteful sub-heads:
+
+The Injury (femur, epiphysis closure, prolonged rehab)
+
+Rebuilding & Moving to the U.S. (expectations as the “Brazilian kid,” setbacks, perseverance)
+
+Return & Growth (state championship, goosebumps moment, reframing adversity)
+
+From Soccer to Patient Safety (how it forged your MCID-first stance: “prove benefit before risk”)
+
+Today (CareFuse + engineering + faith/community → protecting patients from invasive procedures unlikely to reach MCID)
+
+Tone: humble, reflective, resilient; connect to patient-first model philosophy.
+
+/contact
+
+Email, phone +1 (540) 998-4267, LinkedIn, simple contact form (“purpose of message” dropdown: Recruiting / Research / Partnership / Speaking).
+
+6) Components & UI Specs
+
+Hero with 2 CTAs; Stats (AUC, calibration, PSW, API-ready).
+
+Cards for roles/projects; Timelines for experience; Feature list for CareFuse methods.
+
+SHAP-style mini bar chart placeholder to visualize factors in a sample prediction on /carefuse.
+
+Testimonial/Quote: from a mentor/instructor slot (placeholder).
+
+Resume download button in header and footer.
+
+7) Structured Content (JSON seed the agent can import)
+{
+  "owner": {
+    "name": "Yuri Braga",
+    "title": "Computer Engineer • Co-founder, CareFuse",
+    "phone": "+1 (540) 998-4267",
+    "email": "ybraga@vt.edu",
+    "location": "Blacksburg, VA",
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/yuribraga1/",
+      "github": ""
+    }
+  },
+  "stats": [
+    {"label": "AUC (TKA)", "value": "≈ 0.87", "note": "50 multi-seed holdout"},
+    {"label": "Calibration", "value": "Platt / Isotonic"},
+    {"label": "Causal Robustness", "value": "Propensity weighting"},
+    {"label": "Deployment", "value": "FastAPI + Docker"}
+  ],
+  "experience": [
+    {
+      "company": "CareFuse",
+      "role": "Co-founder & ML Lead Software Engineer",
+      "period": "2024–Present",
+      "bullets": [
+        "Dual-arm models (TKA vs Conservative) with regularized logistic regression and engineered clinical features.",
+        "Propensity-score weighting; calibration (Platt for TKA, isotonic for Conservative).",
+        "Validation with 50 multi-seed holdout; report AUC, Brier, ECE, cal slope/intercept; AUC ≈ 0.87 (TKA).",
+        "FastAPI + Docker deployment; schema validation, saved thresholds, SHAP explanations for insurer audits."
+      ]
+    },
+    {
+      "company": "Stanley Black & Decker (DeWALT)",
+      "role": "Electrical Engineering Intern",
+      "period": "Jun–Aug 2024",
+      "bullets": [
+        "Designed relay/driver/thermocouple test fixture; automated 3-phase H-bridge tests in embedded C.",
+        "Custom Altium PCB integrating comms + power; reduced test cycle by ~4 hours."
+      ]
+    },
+    {
+      "company": "TREC Lab (Virginia Tech)",
+      "role": "Undergraduate Researcher",
+      "period": "Aug 2022–May 2024",
+      "bullets": [
+        "Sensor shield for force acquisition; filtering & calibration.",
+        "Implemented CAN messaging; encoder interfaces (quadrature/absolute)."
+      ]
+    },
+    {
+      "company": "CMAR (Virginia Tech)",
+      "role": "Undergraduate Researcher",
+      "period": "Aug 2024–Present",
+      "bullets": [
+        "Bayesian obstacle detection prototype (MATLAB→ROS).",
+        "Drivers for multibeam sonar backseat interface."
+      ]
+    }
+  ],
+  "academics": {
+    "school": "Virginia Tech",
+    "degree": "B.S. Computer Engineering (Software Systems)",
+    "gpa": "3.8/4.0",
+    "notes": "Accelerated UG-to-MS coursework initiated; 3 years of research in robotics/autonomy."
+  },
+  "organizations": {
+    "ece_ambassadors": {
+      "title": "VT ECE Ambassadors",
+      "highlights": [
+        "Outreach, recruitment, and advice videos.",
+        "Community building and mentorship."
+      ],
+      "public_refs": ["https://ece.vt.edu/undergrad/ambassadors.html"]
+    },
+    "campus": {
+      "cru": "Cru at VT — Christian community for faith, service, and mentorship.",
+      "byx": "BYX — Beta Upsilon Chi, a Christian brotherhood focused on character and service.",
+      "soccer": "Club/IM soccer participation; teamwork, resilience; NIRSA/IMLeagues entries."
+    }
+  },
+  "carefuse": {
+    "what": "Predict likelihood of meaningful improvement (MCID) after TKA vs conservative care.",
+    "how": [
+      "Interpretable logistic regression with engineered features.",
+      "Propensity-score weighting to reduce confounding.",
+      "Calibration (Platt/isotonic) and thresholding (Youden’s J).",
+      "AUC ≈ 0.87 with 50 multi-seed holdout; robust confidence intervals.",
+      "API + Docker deployment with schema validation and SHAP explanations.",
+      "Integration with insurer audit workflows."
+    ]
+  },
+  "personal_story": {
+    "title": "Resilience, MCID, and Patient Safety",
+    "body": "[PASTE THE FULL ESSAY TEXT HERE verbatim, then append a final section linking the experience to MCID-first clinical decision philosophy and current CareFuse work.]"
+  }
+}
+
+8) Visual & Content Style Notes
+
+Use clean spacing, generous line-height, and an obvious reading flow; hide complexity behind tooltips/expanders.
+
+Keep graphs/metrics plain: AUC badge, 2–3 metric bullets; a small SHAP-style bar chart mock.
+
+Avoid hospital/insurance logos; keep examples generic and de-identified.
+
+9) Deliverables
+
+Fully responsive site with all pages above, filled with the provided copy.
+
+Downloadable PDF resumes (Firmware; ML-Healthcare) linked from /resume.
+
+Contact form with validation + success/failure toasts.
+
+SEO metadata & JSON-LD; sitemap/robots.
+
+Source in a single repo with README for content updates.
+
+10) Optional Enhancements (if time allows)
+
+Dark mode toggle.
+
+MDX blog for short method notes (MCID, calibration, PSW).
+
+Minimal analytics dashboard (visits, resume downloads, contact submissions).
+
+References used for campus involvement confirmation
+
+VT ECE Ambassadors public page (shows Cru at VT, BYX, club soccer, SHPE/IEEE, DeWALT, CMAR, TREC, UTA). 
+ece.vt.edu
+
+VT short videos featuring Yuri as ECE Ambassador. 
+YouTube
+YouTube
+
+IMLeagues/NIRSA entries listing Yuri on VT soccer rosters/leaderboards. 
+IMLeagues
++1
+
+VT CMAR/TREC context (lab scope & research focus). 
+marinerobotics.centers.vt.edu
+autonomyandrobotics.centers.vt.edu
+Facebook
+Virginia Tech Engineering
