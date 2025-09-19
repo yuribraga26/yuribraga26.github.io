@@ -3,7 +3,7 @@ PROMPT FOR AI WEBSITE BUILDER
 
 Create a fast, accessible, single-owner personal portfolio for Yuri Braga — computer engineer and CareFuse co-founder — focused on:
 
-Healthcare ML (explainable logistic models for TKA vs. conservative care, calibrated and propensity-weighted, AUC ≈ 0.87 via 50 multi-seed holdout runs, API-ready for insurer audits),
+Healthcare ML (explainable logistic models for TKA vs. conservative care, calibrated and propensity-weighted, AUC ≈ 0.93 via 50 multi-seed holdout runs, API-ready for insurer audits),
 
 Embedded/robotics work (DeWALT, TREC Lab, CMAR),
 
@@ -75,7 +75,7 @@ Title tagline: Computer Engineer • Co-founder, CareFuse • ML for Patient-Saf
 
 Short stats row (reusable component):
 
-AUC ≈ 0.87 (50 multi-seed holdout)
+AUC ≈ 0.93 (50 multi-seed holdout)
 
 Calibrated LR (Platt / isotonic)
 
@@ -87,7 +87,7 @@ API-ready for insurer audits
 
 Core themes
 
-Co-founder & ML Lead, CareFuse: built explainable, calibrated logistic models to predict TKA success vs conservative care; AUC ≈ 0.87 with 50 multi-seed holdout tests; deployed via FastAPI + Docker with schema validation, thresholds, SHAP explanations; integrated outputs into insurer audit workflows.
+Co-founder & ML Lead, CareFuse: built explainable, calibrated logistic models to predict TKA success vs conservative care; AUC ≈ 0.93 with 50 multi-seed holdout tests; deployed via FastAPI + Docker with schema validation, thresholds, SHAP explanations; integrated outputs into insurer audit workflows.
 
 Embedded/Robotics:
 
@@ -119,7 +119,7 @@ CTA buttons: Contact • See CareFuse • Download Resume
 
 Highlights (cards)
 
-CareFuse outcomes — Calibrated LR, AUC ≈ 0.87 (50 multi-seed), SHAP explanations, insurer audit integration.
+CareFuse outcomes — Calibrated LR, AUC ≈ 0.93 (50 multi-seed), SHAP explanations, insurer audit integration.
 
 Embedded to Autonomy — From DeWALT test fixtures & PCBs to TREC & CMAR robotics and sonar pipelines.
 
@@ -166,7 +166,7 @@ Thresholds: optimized by Youden’s J with transparent reporting
 
 Validation: 50 multi-seed holdout + repeated CV; report AUC, Brier, ECE, cal slope/intercept
 
-AUC ≈ 0.87 (TKA), robust CIs; SHAP-based top contributors
+AUC ≈ 0.93 (TKA), robust CIs; SHAP-based top contributors
 
 Deployment: Dockerized FastAPI, schema-validated inputs, saved thresholds, and JSON responses consumable by insurer audit systems.
 
@@ -222,7 +222,7 @@ Awards/roles: ECE 2564 UTA; ECE Ambassadors.
 /ece-ambassadors
 
 What it is: VT program for outreach/recruitment; Yuri featured in videos and student spotlights.
-Your role: Ambassador and mentor; created short advice/experience content; core org member.
+Your role: President and mentor; created short advice/experience content; core org member.
 Reference: Public ECE ambassadors page shows your profile with orgs (Cru, BYX, SHPE, IEEE) and experiences (DeWALT, CMAR, TREC, UTA). Include links to a couple of short VT videos. 
 ece.vt.edu
 YouTube
@@ -282,7 +282,7 @@ Resume download button in header and footer.
     }
   },
   "stats": [
-    {"label": "AUC (TKA)", "value": "≈ 0.87", "note": "50 multi-seed holdout"},
+  {"label": "AUC (TKA)", "value": "≈ 0.93", "note": "50 multi-seed holdout"},
     {"label": "Calibration", "value": "Platt / Isotonic"},
     {"label": "Causal Robustness", "value": "Propensity weighting"},
     {"label": "Deployment", "value": "FastAPI + Docker"}
@@ -295,7 +295,7 @@ Resume download button in header and footer.
       "bullets": [
         "Dual-arm models (TKA vs Conservative) with regularized logistic regression and engineered clinical features.",
         "Propensity-score weighting; calibration (Platt for TKA, isotonic for Conservative).",
-        "Validation with 50 multi-seed holdout; report AUC, Brier, ECE, cal slope/intercept; AUC ≈ 0.87 (TKA).",
+  "Validation with 50 multi-seed holdout; report AUC, Brier, ECE, cal slope/intercept; AUC ≈ 0.93 (TKA).",
         "FastAPI + Docker deployment; schema validation, saved thresholds, SHAP explanations for insurer audits."
       ]
     },
@@ -354,7 +354,7 @@ Resume download button in header and footer.
       "Interpretable logistic regression with engineered features.",
       "Propensity-score weighting to reduce confounding.",
       "Calibration (Platt/isotonic) and thresholding (Youden’s J).",
-      "AUC ≈ 0.87 with 50 multi-seed holdout; robust confidence intervals.",
+  "AUC ≈ 0.93 with 50 multi-seed holdout; robust confidence intervals.",
       "API + Docker deployment with schema validation and SHAP explanations.",
       "Integration with insurer audit workflows."
     ]
