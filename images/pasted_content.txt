@@ -216,7 +216,7 @@ autonomyandrobotics.centers.vt.edu
 
 Program: B.S. Computer Engineering (Software Systems), Virginia Tech; GPA 3.8/4.0; accelerated UG-to-MS coursework initiated.
 Research: 3 years in robotics/autonomy (TREC/CMAR).
-Coursework highlights: Embedded systems, signals, controls/robotics, algorithms, ML.
+Coursework highlights: Artificial Intelligence Engineering, Computer Systems, Advanced Real-Time Systems, Large Scale Software Design
 Awards/roles: ECE 2564 UTA; ECE Ambassadors.
 
 /ece-ambassadors
@@ -274,7 +274,7 @@ Resume download button in header and footer.
     "name": "Yuri Braga",
     "title": "Computer Engineer • Co-founder, CareFuse",
     "phone": "+1 (540) 998-4267",
-    "email": "ybraga@vt.edu",
+  "email": "yuri.braga@carefuseai.com",
     "location": "Blacksburg, VA",
     "links": {
       "linkedin": "https://www.linkedin.com/in/yuribraga1/",
