@@ -1,3 +1,4 @@
+DISABLED RSC PAYLOAD - academics (client serialized payload intentionally removed to keep static HTML authoritative)
 2:I[5878,["878","static/chunks/878-a2053ba011a8f515.js","260","static/chunks/app/academics/page-8fd6ebd0587d27ab.js"],"Image"]
 3:I[4707,[],""]
 4:I[6423,[],""]
