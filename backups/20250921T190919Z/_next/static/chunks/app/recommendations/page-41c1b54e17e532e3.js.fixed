@@ -1,0 +1,17 @@
+(function(){
+  // Minimal static client loader for recommendations page — intentionally non-interactive
+  // This file replaces the interactive compiled bundle in exported site to avoid runtime rehydration errors.
+  if(typeof window==='undefined') return;
+  try{
+    // no-op: rely on server-rendered HTML already present in /recommendations/index.html
+    // Provide a small helper to open images in a new tab when clicked (delegated)
+    document.addEventListener('click', function(e){
+      var el = e.target;
+      // if clicking an image inside recommendations, open full-size
+      if(el && el.tagName==='IMG' && el.src && el.closest && el.closest('main')){
+        var path = el.getAttribute('src');
+        if(path && path.indexOf('/images/')===0){ window.open(path, '_blank'); }
+      }
+    }, false);
+  }catch(err){/* ignore */}
+})();
