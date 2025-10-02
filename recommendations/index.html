@@ -38,6 +38,16 @@
 <meta name="twitter:title" content="Yuri Braga - Computer Engineer &amp; Healthcare AI Researcher"/>
 <meta name="twitter:description" content="Computer Engineer at Virginia Tech specializing in healthcare AI and patient safety."/>
 <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16"/>
+<style>
+.image-lightbox-overlay{position:fixed;inset:0;background-color:rgba(17,24,39,.85);display:none;align-items:center;justify-content:center;z-index:9999;padding:2rem;}
+.image-lightbox-overlay.active{display:flex;}
+.image-lightbox-content{position:relative;max-width:90vw;max-height:90vh;}
+.image-lightbox-content img{max-width:100%;max-height:90vh;border-radius:0.75rem;box-shadow:0 20px 45px rgba(15,23,42,.35);}
+.image-lightbox-overlay button{position:absolute;top:-1.5rem;right:-1.5rem;background-color:rgba(15,23,42,.7);color:#fff;border:none;border-radius:9999px;width:2.5rem;height:2.5rem;font-size:1.5rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background-color .2s ease,transform .2s ease;}
+.image-lightbox-overlay button:hover{background-color:rgba(20,184,166,.9);transform:scale(1.05);}
+.image-lightbox-overlay button:focus{outline:2px solid rgba(20,184,166,.9);outline-offset:2px;}
+body.overflow-hidden{overflow:hidden;}
+</style>
 </head>
 <body class="font-sans antialiased">
 <nav class="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
@@ -140,7 +150,7 @@
 </div>
 <div class="px-6 pb-6">
 <div class="mb-6">
-<img alt="Recommendation from John Linko" loading="lazy" width="600" height="400" decoding="async" data-nimg="1" class="w-full rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow cursor-pointer" style="color:transparent" src="/images/dewalt_recommendation_letter.png"/>
+<img alt="Recommendation from John Linko" loading="lazy" width="600" height="400" decoding="async" data-nimg="1" class="w-full rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow cursor-pointer" style="color:transparent" src="/images/dewalt_recommendation_letter.png" data-full-size="/images/dewalt_recommendation_letter.png"/>
 <p class="text-sm text-carefuse-gray mt-2 text-center">Click to view full size</p>
 </div>
 <blockquote class="text-carefuse-gray italic leading-relaxed mb-4">&quot;<!-- -->It is my pleasure to strongly recommend Yuri Braga for any future program or position he is persuading. Yuri demonstrated creativity, collaboration, strong work ethic and a great attitude. He also has strong understanding of circuit design, microcontrollers, and electronic testing equipment. Yuri is a rare engineer who is fast to learn, shows up everyday with a great attitude and very easy to work with.<!-- -->&quot;</blockquote>
@@ -184,7 +194,7 @@
 </div>
 <div class="px-6 pb-6">
 <div class="mb-6">
-<img alt="Recommendation from Luis Yon Morales" loading="lazy" width="600" height="400" decoding="async" data-nimg="1" class="w-full rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow cursor-pointer" style="color:transparent" src="/images/dewalt_linkedin_recommendation.png"/>
+<img alt="Recommendation from Luis Yon Morales" loading="lazy" width="600" height="400" decoding="async" data-nimg="1" class="w-full rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow cursor-pointer" style="color:transparent" src="/images/dewalt_linkedin_recommendation.png" data-full-size="/images/dewalt_linkedin_recommendation.png"/>
 <p class="text-sm text-carefuse-gray mt-2 text-center">Click to view full size</p>
 </div>
 <blockquote class="text-carefuse-gray italic leading-relaxed mb-4">&quot;<!-- -->Yuri was truly a joy to have on the team. Dedicated worker, refreshingly humorous, and caught onto Power Electronics concepts swiftly. He showed a great level of comfortability in system design (hardware architecture and firmware writing), pcb layout (Altium), and conducting his own internal project reviews. His test rig worked on the first hardware revision which is exceedingly rare!<!-- -->&quot;</blockquote>
@@ -221,7 +231,7 @@
 </div>
 <div class="px-6 pb-6">
 <div class="mb-6">
-<img alt="Recommendation from Dr. Brewer" loading="lazy" width="600" height="400" decoding="async" data-nimg="1" class="w-full rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow cursor-pointer" style="color:transparent" src="/images/brewer_rect_letter.png"/>
+<img alt="Recommendation from Dr. Brewer" loading="lazy" width="600" height="400" decoding="async" data-nimg="1" class="w-full rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow cursor-pointer" style="color:transparent" src="/images/brewer_rect_letter.png" data-full-size="/images/brewer_rect_letter.png"/>
 <p class="text-sm text-carefuse-gray mt-2 text-center">Click to view full size</p>
 </div>
 <blockquote class="text-carefuse-gray italic leading-relaxed mb-4">"Yuri was an exceptional student in my class and has continued to impress me ever since. He consistently demonstrated outstanding organizational skills, a deep passion for engineering, and a rare ability to translate theory into well-executed practice. His project work showed careful attention to detail, strong problem-solving ability, and thoughtful design trade-offs. Yuri's curiosity and work ethic made him a reliable collaborator and a leader in group settings. I enthusiastically recommend Yuri for any advanced study or research position; he will be an asset to any team he joins."</blockquote>
@@ -231,6 +241,13 @@
 </div>
 </section>
 <!-- Upload and manual recommendation forms removed per request -->
+<div class="text-center mt-12">
+<a class="inline-flex items-center bg-carefuse-teal text-white px-6 py-3 rounded-lg hover:bg-carefuse-teal/90 transition-colors font-medium" href="/contact/">Next: Contact<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 ml-2" aria-hidden="true">
+<path d="M5 12h14"></path>
+<path d="m12 5 7 7-7 7"></path>
+</svg>
+</a>
+</div>
 </div>
 </div>
 </main>
@@ -294,6 +311,67 @@
 </footer>
 
 
+
+<div class="image-lightbox-overlay" aria-hidden="true">
+<div class="image-lightbox-content">
+<img src="" alt=""/>
+<button type="button" aria-label="Close full size image">&times;</button>
+</div>
+</div>
+<script>
+(function(){
+try{
+var overlay=document.querySelector('.image-lightbox-overlay');
+if(!overlay)return;
+var overlayImage=overlay.querySelector('img');
+var closeButton=overlay.querySelector('button');
+function openOverlay(img){
+overlayImage.src=img.getAttribute('data-full-size')||img.src;
+overlayImage.alt=img.alt||'';
+overlay.classList.add('active');
+overlay.setAttribute('aria-hidden','false');
+document.body.classList.add('overflow-hidden');
+if(closeButton&&typeof closeButton.focus==='function'){
+try{closeButton.focus({preventScroll:true});}catch(focusError){closeButton.focus();}
+}
+}
+function closeOverlay(){
+overlay.classList.remove('active');
+overlay.setAttribute('aria-hidden','true');
+overlayImage.src='';
+overlayImage.alt='';
+document.body.classList.remove('overflow-hidden');
+}
+var recommendationImages=document.querySelectorAll('img[data-full-size]');
+recommendationImages.forEach(function(img){
+img.setAttribute('role','button');
+img.setAttribute('tabindex','0');
+img.setAttribute('aria-label','View "'+(img.alt||'recommendation image')+'" in full size');
+img.addEventListener('click',function(){openOverlay(img);});
+img.addEventListener('keydown',function(event){
+if(event.key==='Enter'||event.key===' '){
+event.preventDefault();
+openOverlay(img);
+}
+});
+});
+overlay.addEventListener('click',function(event){
+if(event.target===overlay){
+closeOverlay();
+}
+});
+closeButton.addEventListener('click',function(event){
+event.preventDefault();
+closeOverlay();
+});
+document.addEventListener('keydown',function(event){
+if(event.key==='Escape'&&overlay.classList.contains('active')){
+closeOverlay();
+}
+});
+}catch(e){console.error('Lightbox error',e);}
+})();
+</script>
 
 </body>
 </html>
