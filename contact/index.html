@@ -154,7 +154,13 @@
 <p class="text-gray-600 leading-relaxed">Fill out the form below and I&#x27;ll get back to you as soon as possible.</p>
 </div>
 <div class="px-6 pb-6">
-<form class="space-y-6">
+<!-- NOTE: This is a static site. Using Formsubmit.co (no signup required) so the form posts to your email without server-side code.
+	 Submissions are sent via AJAX; the page will show an inline toast on success/failure. -->
+<form id="contact-form" class="space-y-6" action="https://formsubmit.co/yuri.braga@carefuseai.com" method="POST" novalidate>
+	<!-- Hidden fields used by Formsubmit.co -->
+	<input type="hidden" name="_subject" value="New message from yuribraga.dev contact form">
+	<!-- Disable Formsubmit's default captcha for UX; remove or set to true to enable -->
+	<input type="hidden" name="_captcha" value="false">
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 <div>
 <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
@@ -278,6 +284,61 @@
 </div>
 </footer>
 <!-- Client runtime removed: this static HTML is intended to be served as-is on GitHub Pages. -->
+<!-- Toast container and AJAX submit script -->
+<div id="cf-toast" aria-live="polite" style="position:fixed;right:24px;bottom:24px;display:none;padding:12px 16px;border-radius:8px;color:#fff;font-weight:600;box-shadow:0 8px 24px rgba(2,6,23,0.12);z-index:9999"></div>
+<script>
+(function(){
+	var form = document.getElementById('contact-form');
+	if(!form) return;
+	var toast = document.getElementById('cf-toast');
+	function showToast(msg, success){
+		toast.textContent = msg;
+		toast.style.background = success ? '#059669' : '#dc2626';
+		toast.style.display = 'block';
+		toast.style.opacity = '0';
+		toast.style.transition = 'opacity 220ms ease';
+		requestAnimationFrame(function(){ toast.style.opacity = '1'; });
+		// hide after 4s
+		setTimeout(function(){ toast.style.opacity = '0'; setTimeout(function(){ toast.style.display = 'none'; }, 220); }, 4000);
+	}
+
+	form.addEventListener('submit', function(e){
+		e.preventDefault();
+		// basic client-side validation
+		var name = (form.querySelector('#name') && form.querySelector('#name').value || '').trim();
+		var email = (form.querySelector('#email') && form.querySelector('#email').value || '').trim();
+		var purpose = (form.querySelector('#purpose') && form.querySelector('#purpose').value || '').trim();
+		var message = (form.querySelector('#message') && form.querySelector('#message').value || '').trim();
+		var honeypot = (form.querySelector('[name="honeypot"]') && form.querySelector('[name="honeypot"]').value) || '';
+		if(honeypot){
+			// spam trap filled — silently abort
+			return;
+		}
+		if(!name || !email || !purpose || !message){
+			showToast('Please complete all required fields.', false);
+			return;
+		}
+
+		var submitBtn = form.querySelector('button[type="submit"]');
+		if(submitBtn) submitBtn.disabled = true;
+
+		var data = new FormData(form);
+
+		fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+			.then(function(response){
+				if(response.ok){
+					showToast('Message sent — thanks!', true);
+					form.reset();
+				} else {
+					showToast('Submission failed. Please try again later.', false);
+				}
+			})
+			.catch(function(){ showToast('Network error. Check your connection.', false); })
+			.finally(function(){ if(submitBtn) submitBtn.disabled = false; });
+	});
+})();
+</script>
 </body>
 </html>
+*** End Patch
 
