@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/_next/static/css/28d069147ec3b886.css" data-precedence="next" />
-  <!-- Next.js runtime scripts removed for static GitHub Pages export -->
+    <!-- Next.js runtime scripts removed for static GitHub Pages export -->
     <title>
       Yuri Braga - Computer Engineer & Healthcare AI Researcher
     </title>
@@ -17,14 +17,33 @@
     <meta property="og:site_name" content="Yuri Braga Portfolio" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-  <!-- Prevent aggressive caching by local servers/browsers -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
+    <!-- Prevent aggressive caching by local servers/browsers -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <meta name="twitter:title" content="Yuri Braga - Computer Engineer & Healthcare AI Researcher" />
     <meta name="twitter:description" content="Computer Engineer at Virginia Tech specializing in healthcare AI and patient safety." />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16" />
-  <!-- Next.js polyfills removed for static GitHub Pages export -->
+    <script>
+      // Reload once with a cache-busting query string if GitHub Pages serves a stale home page for this route
+      (function () {
+        try {
+          var path = location.pathname;
+          var isAcademics = path.indexOf('/academics') === 0 || path.indexOf('/academics/') === 0;
+          if (!isAcademics) return;
+
+          var hasHeading = document && document.body && /Academic Journey/.test(document.body.textContent || '');
+          var hasCacheBuster = /[?&]cb=/.test(location.search);
+          if (!hasHeading && !hasCacheBuster) {
+            var separator = location.href.indexOf('?') === -1 ? '?' : '&';
+            location.replace(location.href + separator + 'cb=' + Date.now());
+          }
+        } catch (e) {
+          /* ignore */
+        }
+      })();
+    </script>
+    <!-- Next.js polyfills removed for static GitHub Pages export -->
   </head>
   <body class="font-sans antialiased">
     <nav class="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
@@ -231,7 +250,7 @@
                         Marine Autonomy (CMAR)
                       </h3>
                       <p class="leading-relaxed text-vt-maroon font-medium">
-                        Aug 2024–Present
+                        Aug 2024 - May 2025
                       </p>
                     </div>
                   </div>
@@ -268,6 +287,9 @@
                       <h3 class="font-semibold text-gray-900 mb-2 text-lg">
                         ECE 2564 Undergraduate Teaching Assistant
                       </h3>
+                      <p class="leading-relaxed text-vt-maroon font-medium">
+                        July 2024 - Dec 2024
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -296,6 +318,9 @@
                       <h3 class="font-semibold text-gray-900 mb-2 text-lg">
                         VT ECE Ambassadors — President
                       </h3>
+                      <p class="leading-relaxed text-vt-maroon font-medium">
+                        March 2024 - Present
+                      </p>
                     </div>
                   </div>
                 </div>
