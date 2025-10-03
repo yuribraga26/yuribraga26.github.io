@@ -100,7 +100,7 @@
             </a>
           </div>
           <div class="md:hidden">
-            <button class="text-gray-700 hover:text-carefuse-teal focus:outline-none focus:text-carefuse-teal">
+            <button id="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu" class="text-gray-700 hover:text-carefuse-teal focus:outline-none focus:text-carefuse-teal">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu w-6 h-6" aria-hidden="true">
                 <path d="M4 5h16">
                 </path>
@@ -114,6 +114,20 @@
         </div>
       </div>
     </nav>
+    <!-- Mobile menu (hidden by default) -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-b border-gray-200">
+      <div class="px-4 pt-4 pb-4 space-y-2">
+        <a class="block text-gray-700 py-2" href="/">Home</a>
+        <a class="block text-gray-700 py-2" href="/about/">About</a>
+        <a class="block text-gray-700 py-2" href="/carefuse/">CareFuse</a>
+        <a class="block text-gray-700 py-2" href="/experience/">Experience</a>
+        <a class="block text-gray-700 py-2" href="/academics/">Academics</a>
+        <a class="block text-gray-700 py-2" href="/campus-involvement/">Campus</a>
+        <a class="block text-gray-700 py-2" href="/personal/">Personal</a>
+        <a class="block text-gray-700 py-2" href="/recommendations/">Recommendations</a>
+        <a class="block text-gray-700 py-2" href="/contact/">Contact</a>
+      </div>
+    </div>
     <main class="min-h-screen">
       <div class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -355,7 +369,7 @@
           </section>
         </div>
       </div>
-      <div class="mt-12 text-center">
+      <div class="mt-12 text-center" style="margin-bottom:2.25rem;">
         <a class="inline-flex items-center bg-carefuse-teal text-white px-6 py-3 rounded-lg hover:bg-carefuse-teal/90 transition-colors font-medium" href="/campus-involvement/">
           Next: Campus Involvement
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 ml-2" aria-hidden="true">
@@ -365,6 +379,17 @@
         </a>
       </div>
     </main>
+    <script>
+      (function(){
+        var btn = document.getElementById('mobile-menu-button');
+        var menu = document.getElementById('mobile-menu');
+        if(!btn || !menu) return;
+        btn.addEventListener('click', function(){
+          var open = menu.classList.toggle('hidden') === false;
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      })();
+    </script>
     <footer class="bg-gray-900 text-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
