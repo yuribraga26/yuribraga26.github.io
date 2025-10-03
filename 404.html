@@ -76,5 +76,20 @@
 </div>
 </div>
 </footer>
+<script>
+(function(){
+  try {
+    var btn = document.getElementById('mobile-menu-button');
+    var menu = document.getElementById('mobile-menu');
+    if(!btn || !menu) return;
+    function show(){ menu.classList.remove('hidden','opacity-0'); menu.classList.add('opacity-100'); btn.setAttribute('aria-expanded','true'); }
+    function hide(){ menu.classList.add('opacity-0'); setTimeout(function(){ menu.classList.add('hidden'); }, 220); btn.setAttribute('aria-expanded','false'); }
+    btn.addEventListener('click', function(e){ e.stopPropagation(); if(menu.classList.contains('hidden')) show(); else hide(); });
+    document.addEventListener('click', function(e){ if(!menu.contains(e.target) && !btn.contains(e.target)) hide(); });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') hide(); });
+    Array.prototype.slice.call(menu.querySelectorAll('a')).forEach(function(a){ a.addEventListener('click', hide); });
+  } catch (err) { console && console.error && console.error('mobile-menu script error', err); }
+})();
+</script>
 </body>
 </html>

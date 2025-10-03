@@ -72,7 +72,7 @@
 </a>
 </div>
 <div class="md:hidden">
-<button class="text-gray-700 hover:text-carefuse-teal focus:outline-none focus:text-carefuse-teal">
+<button id="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu" class="text-gray-700 hover:text-carefuse-teal focus:outline-none focus:text-carefuse-teal">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu w-6 h-6" aria-hidden="true">
 <path d="M4 5h16">
 </path>
@@ -86,6 +86,20 @@
 </div>
 </div>
 </nav>
+<!-- Mobile menu (hidden by default) -->
+<div id="mobile-menu" class="md:hidden hidden bg-white border-b border-gray-200 transition-opacity duration-200 ease-in-out opacity-0">
+	<div class="px-4 pt-4 pb-4 space-y-2">
+		<a class="block text-gray-700 py-2" href="/">Home</a>
+		<a class="block text-gray-700 py-2" href="/about/">About</a>
+		<a class="block text-gray-700 py-2" href="/carefuse/">CareFuse</a>
+		<a class="block text-gray-700 py-2" href="/experience/">Experience</a>
+		<a class="block text-gray-700 py-2" href="/academics/">Academics</a>
+		<a class="block text-gray-700 py-2" href="/campus-involvement/">Campus</a>
+		<a class="block text-gray-700 py-2" href="/personal/">Personal</a>
+		<a class="block text-gray-700 py-2" href="/recommendations/">Recommendations</a>
+		<a class="block text-gray-700 py-2" href="/contact/">Contact</a>
+	</div>
+</div>
 <main class="min-h-screen">
 <div class="min-h-screen bg-white">
 <section class="py-16 bg-white">
@@ -347,7 +361,7 @@
 </section>
 </div>
 </main>
-<div class="mt-12 text-center" style="margin-bottom:2.25rem;">
+<div class="mt-12 text-center mb-9">
 	<a class="inline-flex items-center bg-carefuse-teal text-white px-6 py-3 rounded-lg hover:bg-carefuse-teal/90 transition-colors font-medium" href="/recommendations/">
 		Next: Recommendations
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 ml-2" aria-hidden="true">
@@ -414,6 +428,19 @@
 </div>
 </div>
 </footer>
+<script>
+	(function(){
+		var btn = document.getElementById('mobile-menu-button');
+		var menu = document.getElementById('mobile-menu');
+		if(!btn || !menu) return;
+		function show(){ menu.classList.remove('hidden'); menu.classList.remove('opacity-0'); menu.style.opacity='1'; btn.setAttribute('aria-expanded','true'); }
+		function hide(){ menu.classList.add('hidden'); menu.classList.add('opacity-0'); menu.style.opacity='0'; btn.setAttribute('aria-expanded','false'); }
+		btn.addEventListener('click', function(e){ e.stopPropagation(); if(menu.classList.contains('hidden')) show(); else hide(); });
+		document.addEventListener('click', function(e){ if(!menu.contains(e.target) && !btn.contains(e.target)){ if(!menu.classList.contains('hidden')) hide(); } });
+		document.addEventListener('keydown', function(e){ if(e.key==='Escape') hide(); });
+		menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', hide); });
+	})();
+</script>
 <script src="/_next/static/chunks/webpack-616e068a201ad621.js" async="">
 </script>
 <script>(self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])</script>
