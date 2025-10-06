@@ -51,7 +51,7 @@
         <div class="flex items-center justify-between h-16">
           <div class="flex items-center">
             <a class="flex items-center space-x-3" href="/">
-              <img alt="CareFuse" loading="lazy" width="32" height="32" decoding="async" data-nimg="1" class="w-8 h-8" style="color:transparent" src="/images/YB_logo.png" />
+              <img alt="CareFuse" loading="lazy" width="32" height="32" decoding="async" data-nimg="1" class="w-8 h-8" style="color:transparent" src="/images/carefuse_logo.png" />
               <span class="text-xl font-bold text-gray-900">
                 Yuri Braga
               </span>

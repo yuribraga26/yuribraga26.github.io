@@ -23,7 +23,7 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">        <div class="flex items-center justify-between h-16">
 <div class="flex items-center">
 <a class="flex items-center space-x-3" href="/">
-<img alt="CareFuse" loading="lazy" width="32" height="32" decoding="async" data-nimg="1" class="w-8 h-8" style="color:transparent" src="/images/YB_logo.png"/>
+<img alt="CareFuse" loading="lazy" width="32" height="32" decoding="async" data-nimg="1" class="w-8 h-8" style="color:transparent" src="/images/carefuse_logo.png"/>
 <span class="text-xl font-bold text-gray-900">Yuri Braga</span>
 </a>
 </div>
@@ -50,7 +50,7 @@
 </a>
 </div>
 <div class="md:hidden">
-<button id="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu" class="text-gray-700 hover:text-carefuse-teal focus:outline-none focus:text-carefuse-teal">
+<button class="text-gray-700 hover:text-carefuse-teal focus:outline-none focus:text-carefuse-teal">
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu w-6 h-6" aria-hidden="true">
 <path d="M4 5h16">
 </path>
@@ -63,20 +63,7 @@
 </div>
 </div>
 </div>
- </nav>
-<div id="mobile-menu" class="md:hidden hidden bg-white border-b border-gray-200 transition-opacity duration-200 ease-in-out opacity-0">
-	<div class="px-4 pt-4 pb-4 space-y-2">
-		<a class="block text-gray-700 py-2" href="/">Home</a>
-		<a class="block text-gray-700 py-2" href="/about/">About</a>
-		<a class="block text-gray-700 py-2" href="/carefuse/">CareFuse</a>
-		<a class="block text-gray-700 py-2" href="/experience/">Experience</a>
-		<a class="block text-gray-700 py-2" href="/academics/">Academics</a>
-		<a class="block text-gray-700 py-2" href="/campus-involvement/">Campus</a>
-		<a class="block text-gray-700 py-2" href="/personal/">Personal</a>
-		<a class="block text-gray-700 py-2" href="/recommendations/">Recommendations</a>
-		<a class="block text-gray-700 py-2" href="/contact/">Contact</a>
-	</div>
-</div>
+</nav>
 <main class="min-h-screen">
 <div class="py-20 bg-white">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -100,7 +87,7 @@
 <div class="flex-1">
 	<h3 class="font-semibold text-gray-900 text-xl mb-1">VT ECE Ambassadors</h3>
 	<p class="leading-relaxed text-vt-maroon font-medium mb-3">President</p>
-<p class="text-gray-700 leading-relaxed mb-4">Outreach, community building, and mentorship.</p>
+<p class="text-gray-700 leading-relaxed mb-4">Outreach, recruitment, and advice videos.. Community building and mentorship.</p>
 </div>
 </div>
 </div>
@@ -109,7 +96,7 @@
 <div class="flex items-start">
 <span class="text-vt-maroon mr-2 mt-2 w-1.5 h-1.5 rounded-full bg-current flex-shrink-0">
 </span>
-<span class="text-gray-600 text-sm">Featured in student spotlight videos</span>
+<span class="text-gray-600 text-sm">Featured in student recruitment videos</span>
 </div>
 <div class="flex items-start">
 <span class="text-vt-maroon mr-2 mt-2 w-1.5 h-1.5 rounded-full bg-current flex-shrink-0">
@@ -124,7 +111,7 @@
 <div class="flex items-start">
 <span class="text-vt-maroon mr-2 mt-2 w-1.5 h-1.5 rounded-full bg-current flex-shrink-0">
 </span>
-<span class="text-gray-600 text-sm">Delivered speeches at panels and official events</span>
+<span class="text-gray-600 text-sm">Core organization member</span>
 </div>
 </div>
 <div class="pt-4 border-t border-gray-200">
@@ -214,7 +201,7 @@
 <div class="flex items-start">
 <span class="text-vt-maroon mr-2 mt-2 w-1.5 h-1.5 rounded-full bg-current flex-shrink-0">
 </span>
-<span class="text-gray-600 text-sm">Brotherhood and service</span>
+<span class="text-gray-600 text-sm">Brotherhood and community service</span>
 </div>
 <div class="flex items-start">
 <span class="text-vt-maroon mr-2 mt-2 w-1.5 h-1.5 rounded-full bg-current flex-shrink-0">
@@ -251,7 +238,7 @@
 <div class="flex-1">
 	<h3 class="font-semibold text-gray-900 text-xl mb-1">Club Soccer</h3>
 	<p class="leading-relaxed text-vt-maroon font-medium mb-3">Player</p>
-	<p class="text-gray-700 leading-relaxed mb-4">Competing against the best teams in the nation, we achieved second place in 2023.</p>
+	<p class="text-gray-700 leading-relaxed mb-4">Second in the nation (best in VT club soccer history) in my first semester playing with the team — I played every minute of every game. Club/IM soccer participation; teamwork, resilience; NIRSA/IMLeagues entries.</p>
 </div>
 </div>
 </div>
@@ -260,7 +247,7 @@
 <div class="flex items-start">
 <span class="text-vt-maroon mr-2 mt-2 w-1.5 h-1.5 rounded-full bg-current flex-shrink-0">
 </span>
-<span class="text-gray-600 text-sm">Active participation in national competitions</span>
+<span class="text-gray-600 text-sm">Active participation in IMLeagues competitions</span>
 </div>
 <div class="flex items-start">
 <span class="text-vt-maroon mr-2 mt-2 w-1.5 h-1.5 rounded-full bg-current flex-shrink-0">
@@ -290,14 +277,39 @@
 </div>
 </div>
 </section>
-<!-- Featured Content removed -->
-</div>
-<div class="mt-12 text-center">
-<a class="inline-flex items-center bg-carefuse-teal text-white px-6 py-3 rounded-lg hover:bg-carefuse-teal/90 transition-colors font-medium" href="/personal/">Next: Personal<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 ml-2" aria-hidden="true">
-<path d="M5 12h14"></path>
-<path d="m12 5 7 7-7 7"></path>
+<section>
+<h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Featured Content</h2>
+<div class="bg-gray-50 rounded-lg p-8 text-center">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-video w-12 h-12 text-vt-maroon mx-auto mb-4" aria-hidden="true">
+<path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5">
+</path>
+<rect x="2" y="6" width="14" height="12" rx="2">
+</rect>
+</svg>
+<h3 class="text-lg font-semibold text-gray-900 mb-2">VT ECE Ambassador Videos</h3>
+<p class="text-gray-600 mb-4">Featured in multiple Virginia Tech ECE recruitment and advice videos, sharing experiences and guidance with prospective students.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-vt-maroon hover:text-vt-maroon/80 font-medium" href="https://www.youtube.com/watch?v=example1">Student Spotlight Video<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-4 h-4 ml-1" aria-hidden="true">
+<path d="M15 3h6v6">
+</path>
+<path d="M10 14 21 3">
+</path>
+<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6">
+</path>
 </svg>
 </a>
+<a target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-vt-maroon hover:text-vt-maroon/80 font-medium" href="https://www.youtube.com/watch?v=example2">Advice for Incoming Students<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-4 h-4 ml-1" aria-hidden="true">
+<path d="M15 3h6v6">
+</path>
+<path d="M10 14 21 3">
+</path>
+<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6">
+</path>
+</svg>
+</a>
+</div>
+</div>
+</section>
 </div>
 </div>
 </main>
@@ -359,21 +371,6 @@
 </div>
 </div>
 </footer>
-<script>
-(function(){
-	try {
-		var btn = document.getElementById('mobile-menu-button');
-		var menu = document.getElementById('mobile-menu');
-		if(!btn || !menu) return;
-		function show(){ menu.classList.remove('hidden','opacity-0'); menu.classList.add('opacity-100'); btn.setAttribute('aria-expanded','true'); }
-		function hide(){ menu.classList.add('opacity-0'); setTimeout(function(){ menu.classList.add('hidden'); }, 220); btn.setAttribute('aria-expanded','false'); }
-		btn.addEventListener('click', function(e){ e.stopPropagation(); if(menu.classList.contains('hidden')) show(); else hide(); });
-		document.addEventListener('click', function(e){ if(!menu.contains(e.target) && !btn.contains(e.target)) hide(); });
-		document.addEventListener('keydown', function(e){ if(e.key === 'Escape') hide(); });
-		Array.prototype.slice.call(menu.querySelectorAll('a')).forEach(function(a){ a.addEventListener('click', hide); });
-	} catch (err) { console && console.error && console.error('mobile-menu script error', err); }
-})();
-</script>
 </body>
 </html>
 
