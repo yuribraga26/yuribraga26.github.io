@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/_next/static/css/28d069147ec3b886.css" data-precedence="next" />
     <link rel="preload" as="script" fetchpriority="low" href="/_next/static/chunks/webpack-616e068a201ad621.js" />
+    <script src="/_next/static/chunks/fd9d1056-357a9aa7cf7b0906.js" async>
+    </script>
+    <script src="/_next/static/chunks/117-5f9b74e563f2720e.js" async>
+    </script>
+    <script src="/_next/static/chunks/main-app-ff95fd5ca27d98e6.js" async>
+    </script>
+    <script src="/_next/static/chunks/878-a2053ba011a8f515.js" async>
+    </script>
+    <script src="/_next/static/chunks/app/academics/page-8fd6ebd0587d27ab.js" async>
+    </script>
+    <script src="/_next/static/chunks/972-e6acae3a74adc8b1.js" async>
+    </script>
+    <script src="/_next/static/chunks/app/layout-96060b751e953699.js" async>
+    </script>
+    <script src="/_next/static/chunks/app/page-7082a7a560f40c4d.js" async>
+    </script>
     <title>
       Yuri Braga - Computer Engineer & Healthcare AI Researcher
     </title>
@@ -24,7 +40,9 @@
     <meta name="twitter:title" content="Yuri Braga - Computer Engineer & Healthcare AI Researcher" />
     <meta name="twitter:description" content="Computer Engineer at Virginia Tech specializing in healthcare AI and patient safety." />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16" />
-    </head>
+    <script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" nomodule>
+    </script>
+  </head>
   <body class="font-sans antialiased">
     <nav class="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -416,6 +434,14 @@
         </div>
       </div>
     </footer>
+    <script src="/_next/static/chunks/webpack-616e068a201ad621.js" async>
+    </script>
+    <script>
+      (self.__next_f=self.__next_f||[]).push([0]);self.__next_f.push([2,null])
+    </script>
+    <script>
+      self.__next_f.push([1,"1:HL[\"/_next/static/css/28d069147ec3b886.css,\"style\"]\n"])
+    </script>
     <!-- Note: large Next.js inline bootstrap blobs were intentionally omitted to keep this file readable. Restore them if you need the original runtime payload. -->
   </body>
 </html>
