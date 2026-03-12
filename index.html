@@ -76,21 +76,16 @@
     </div>
   </div>
 
-  <main class="min-h-screen">
-    <section class="py-16 sm:py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col items-center max-w-4xl mx-auto">
-          <div class="relative w-full max-w-sm sm:max-w-md mb-8">
-            <div class="rounded-2xl overflow-hidden shadow-xl bg-gray-100" style="max-height: 420px;">
-              <img alt="Yuri Braga" fetchpriority="high" width="400" height="400" decoding="async" class="w-full h-full object-cover" style="max-height: 420px;" src="/images/yuri_cross.jpg" />
-            </div>
-            <div class="absolute -bottom-3 -right-3 w-14 h-14 bg-white rounded-full shadow-lg flex items-center justify-center">
-              <img alt="YB Monogram" loading="lazy" width="36" height="36" class="w-9 h-9" src="/images/YB_logo.png" />
-            </div>
-            <div class="absolute -top-2 -right-2 w-5 h-5 bg-carefuse-teal rounded-full"></div>
-            <div class="absolute -bottom-2 -left-2 w-3 h-3 bg-carefuse-navy rounded-full"></div>
-          </div>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-carefuse-navy mb-6 text-center">Systems, embedded, automation &amp; <span class="text-carefuse-teal">AI product</span> — built to ship.</h1>
+  <main class="min-h-screen overflow-x-hidden">
+    <section class="bg-white overflow-x-hidden">
+      <div class="block w-full bg-gray-100" style="width: 100vw; max-width: 100%; margin-left: calc(-50vw + 50%);">
+        <div class="overflow-hidden bg-gray-100 relative" style="max-height: 420px;">
+          <img alt="Yuri Braga" fetchpriority="high" width="400" height="400" decoding="async" class="w-full h-full object-cover" style="max-height: 420px; display: block; width: 100%;" src="/images/yuri_cross.jpg" />
+        </div>
+      </div>
+      <div class="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 sm:pb-20">
+        <div class="flex flex-col items-center">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-carefuse-navy mb-6 text-center w-full">Systems, embedded, automation &amp; <span class="text-carefuse-teal">AI product</span> — built to ship.</h1>
           <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-6 mb-4 w-full max-w-3xl">
             <p class="text-carefuse-gray leading-relaxed mb-4 max-w-3xl" style="font-size: 1.5rem; line-height: 1.65;">Computer engineer specializing in real-time systems, embedded firmware, robotics, and production ML. Virginia Tech grad (3.5 years, 3.78 GPA), 3 years of graduate-level robotics research, ECE Ambassadors President. Co-founded CareFuse and built our ML platform end-to-end.</p>
             <p class="text-carefuse-gray leading-relaxed max-w-3xl" style="font-size: 1.5rem; line-height: 1.65;">Based in Boston, working with teams solving hard problems in automation, robotics, medtech, consumer products, and intelligent systems.</p>
@@ -109,7 +104,9 @@
             </a>
           </div>
         </div>
+      </div>
 
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mt-16">
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-shadow">
@@ -200,8 +197,8 @@
       </div>
     </section>
 
-    <section class="py-16 sm:py-20 bg-carefuse-light">
-      <div class="mt-0 mb-24 sm:mb-32 text-center max-w-4xl mx-auto px-4 space-y-5">
+    <section class="bg-carefuse-light" style="padding-top: 80px; padding-bottom: 80px;">
+      <div class="text-center max-w-4xl mx-auto px-4 flex flex-col items-center gap-6">
         <h2 class="text-2xl sm:text-3xl font-semibold text-carefuse-navy">Learn more about me</h2>
         <p class="text-carefuse-gray text-base sm:text-lg">Explore my background, experience, and how I approach building systems that ship.</p>
         <div class="flex justify-center">
