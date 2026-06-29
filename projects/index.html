@@ -28,19 +28,11 @@
   .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu { display: block; }
   .nav-dropdown-menu a { display: block; padding: 0.625rem 0.75rem; border-radius: 0.375rem; color: #374151; font-size: 0.875rem; font-weight: 500; white-space: nowrap; }
   .nav-dropdown-menu a:hover, .nav-dropdown-menu a:focus { color: #0f766e; background: #f0fdfa; outline: none; }
-</style>
-<style>
-  .project-hero-band { background: linear-gradient(135deg, #f8fafc 0%, #ecfeff 48%, #fff7ed 100%); }
-  .project-metric { border: 1px solid #dbeafe; background: rgba(255,255,255,0.82); }
-  .project-card { border: 1px solid #dbe4ea; background: #fff; box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08); }
-  .project-card-accent { height: 6px; background: linear-gradient(90deg, #0f766e, #2563eb, #f97316); }
-  .project-icon { width: 3.25rem; height: 3.25rem; border-radius: 0.9rem; display: inline-flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 14px 28px rgba(15, 23, 42, 0.16); }
-  .project-pill { display: inline-flex; align-items: center; min-height: 2rem; padding: 0.35rem 0.7rem; border-radius: 999px; background: #eefdfb; color: #143f3c; border: 1px solid #c7ede8; font-size: 0.83rem; font-weight: 650; white-space: nowrap; }
-  .project-mini-pill { display: inline-flex; align-items: center; padding: 0.28rem 0.58rem; border-radius: 999px; background: #f8fafc; color: #334155; border: 1px solid #e2e8f0; font-size: 0.78rem; font-weight: 650; white-space: nowrap; }
-  .project-image { aspect-ratio: 16 / 10; object-fit: cover; width: 100%; height: auto; }
-  .project-diagram { aspect-ratio: 16 / 10; object-fit: contain; width: 100%; height: auto; background: #fff; }
-  .project-section-title { letter-spacing: 0.16em; text-transform: uppercase; color: #0f766e; font-size: 0.78rem; font-weight: 800; }
-  .project-soft-card { border: 1px solid #e2e8f0; background: #f8fafc; border-radius: 0.85rem; padding: 1rem; height: 100%; }
+  /* Minimal utilities not present in the purged Tailwind build */
+  .uppercase { text-transform: uppercase; }
+  .tracking-wide { letter-spacing: 0.05em; }
+  .object-contain { object-fit: contain; }
+  .aspect-16x10 { aspect-ratio: 16 / 10; }
 </style>
 </head>
 
@@ -75,153 +67,260 @@
   </div>
 </div>
 
-    <main class="min-h-screen overflow-x-hidden bg-white">
-  <section class="project-hero-band py-20 sm:py-24">
+    <main class="min-h-screen bg-white">
+  <!-- Hero -->
+  <section class="bg-carefuse-light py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-4xl">
-        <p class="project-section-title mb-4">Selected engineering systems</p>
+      <div class="max-w-3xl">
+        <p class="uppercase tracking-wide text-carefuse-teal text-sm font-semibold mb-4">Selected Engineering Systems</p>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-carefuse-navy mb-6">Projects</h1>
-        <p class="text-xl sm:text-2xl text-carefuse-gray leading-relaxed mb-8"><strong>Real systems</strong> across healthcare AI, embedded firmware, robotics, hardware validation, full-stack platforms, and electrical design.</p>
-        <div class="flex flex-wrap gap-3">
-          <span class="project-pill">Healthcare AI</span>
-          <span class="project-pill">Embedded firmware</span>
-          <span class="project-pill">Robotics systems</span>
-          <span class="project-pill">Hardware validation</span>
-          <span class="project-pill">Full-stack platforms</span>
-          <span class="project-pill">Electrical design</span>
+        <p class="text-xl text-carefuse-gray leading-relaxed mb-8">Systems I've built across healthcare AI, embedded firmware, robotics, hardware validation, and full-stack platforms — with emphasis on real constraints, measurable outcomes, and production judgment.</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a class="inline-flex items-center justify-center bg-carefuse-teal text-white px-6 py-3 rounded-lg hover:bg-carefuse-teal/90 transition-colors font-semibold" href="/experience/">View Experience</a>
+          <a class="inline-flex items-center justify-center border border-carefuse-teal text-carefuse-teal px-6 py-3 rounded-lg hover:bg-carefuse-teal hover:text-white transition-colors font-semibold" href="/contact/">Contact Me</a>
         </div>
       </div>
-      <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="project-metric rounded-xl p-5"><div class="project-icon mb-4" style="background:#0f766e;">AI</div><p class="text-carefuse-navy font-bold text-2xl">10M+</p><p class="text-carefuse-gray text-sm leading-relaxed">covered lives in CareFuse pilot conversations</p></div>
-        <div class="project-metric rounded-xl p-5"><div class="project-icon mb-4" style="background:#2563eb;">HW</div><p class="text-carefuse-navy font-bold text-2xl">4+ hrs</p><p class="text-carefuse-gray text-sm leading-relaxed">saved through validation automation</p></div>
-        <div class="project-metric rounded-xl p-5"><div class="project-icon mb-4" style="background:#7c3aed;">160+</div><p class="text-carefuse-navy font-bold text-2xl">groups</p><p class="text-carefuse-gray text-sm leading-relaxed">modeled in Spurr's campus platform</p></div>
-        <div class="project-metric rounded-xl p-5"><div class="project-icon mb-4" style="background:#f97316;">CAN</div><p class="text-carefuse-navy font-bold text-2xl">marine</p><p class="text-carefuse-gray text-sm leading-relaxed">RHIB autonomy and electrical backbone</p></div>
-      </div>
     </div>
   </section>
 
-  <section class="py-20 sm:py-24 bg-white">
+  <!-- Featured Projects -->
+  <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-12">
-        <p class="project-section-title mb-3">01-04</p>
-        <h2 class="text-3xl sm:text-4xl font-bold text-carefuse-navy mb-4">Featured Projects</h2>
-        <p class="text-xl text-carefuse-gray max-w-3xl">The strongest examples of how I build: product-minded software, hardware that survives testing, and robotics systems designed for real constraints.</p>
+      <div class="mb-12 max-w-3xl">
+        <p class="uppercase tracking-wide text-carefuse-teal text-sm font-semibold mb-3">Featured Work</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-carefuse-navy mb-4">Systems with real-world constraints</h2>
+        <p class="text-carefuse-gray leading-relaxed">A focused selection of projects showing how I move from problem definition to implementation, validation, and impact.</p>
       </div>
 
-      <div class="space-y-12">
-        <article class="project-card rounded-2xl overflow-hidden">
-          <div class="project-card-accent"></div>
-          <div class="p-6 sm:p-8 lg:p-10">
-            <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8 items-start">
-              <div class="rounded-2xl overflow-hidden border border-carefuse-teal/20 bg-carefuse-light p-6">
-                <div class="project-icon mb-6" style="background:#0f766e;">01</div>
-                <h3 class="text-3xl font-bold text-carefuse-navy mb-3">CareFuse</h3>
-                <p class="text-carefuse-teal font-semibold mb-5">Co-founder and ML Lead</p>
-                <div class="grid grid-cols-2 gap-3 text-sm">
-                  <div class="bg-white rounded-lg p-3 border border-carefuse-teal/10"><strong class="text-carefuse-navy block">Platform</strong><span class="text-carefuse-gray">Clinical AI</span></div>
-                  <div class="bg-white rounded-lg p-3 border border-carefuse-teal/10"><strong class="text-carefuse-navy block">Deployment</strong><span class="text-carefuse-gray">FastAPI + Docker</span></div>
-                  <div class="bg-white rounded-lg p-3 border border-carefuse-teal/10"><strong class="text-carefuse-navy block">Models</strong><span class="text-carefuse-gray">Dual-arm outcomes</span></div>
-                  <div class="bg-white rounded-lg p-3 border border-carefuse-teal/10"><strong class="text-carefuse-navy block">Trust</strong><span class="text-carefuse-gray">SHAP + calibration</span></div>
-                </div>
+      <div class="space-y-8">
+        <!-- 01 CareFuse -->
+        <article class="rounded-2xl border border-gray-200 bg-white shadow-sm p-8 transition-shadow hover:shadow-md hover:border-gray-300">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-wide text-carefuse-teal mb-3">01 / Healthcare AI</p>
+              <h3 class="text-2xl sm:text-3xl font-bold text-carefuse-navy mb-2">CareFuse</h3>
+              <p class="text-carefuse-teal font-semibold mb-4">Co-founder and ML Lead</p>
+              <p class="text-carefuse-gray leading-relaxed mb-6 max-w-3xl">Built a clinical AI platform for predicting orthopedic treatment outcomes, comparing surgery against conservative care, and generating explanations for payer/provider workflows.</p>
+              <ul class="space-y-2 mb-6">
+                <li class="flex gap-2 text-carefuse-gray leading-relaxed"><svg class="w-5 h-5 text-carefuse-teal flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span>Designed ML-ready datasets, calibrated models, SHAP explanations, and validation workflow.</span></li>
+                <li class="flex gap-2 text-carefuse-gray leading-relaxed"><svg class="w-5 h-5 text-carefuse-teal flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span>Built FastAPI + Docker deployment path for model serving and internal tooling.</span></li>
+                <li class="flex gap-2 text-carefuse-gray leading-relaxed"><svg class="w-5 h-5 text-carefuse-teal flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span>Supported pilot discovery with a Brazilian healthcare organization serving 10M+ covered lives.</span></li>
+              </ul>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Python</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">scikit-learn</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">XGBoost</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">SHAP</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">FastAPI</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Docker</span>
               </div>
-              <div>
-                <div class="flex flex-wrap gap-2 mb-5"><span class="project-pill">Healthcare AI</span><span class="project-pill">Clinical pipelines</span><span class="project-pill">Explainability</span></div>
-                <p class="text-lg text-carefuse-gray leading-relaxed mb-6"><strong>Built a clinical AI platform</strong> that predicts orthopedic treatment outcomes, compares surgery against conservative care, and packages explanations for clinicians, payers, and audits.</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                  <div class="project-soft-card"><h4 class="font-bold text-carefuse-navy mb-2">Problem</h4><p class="text-carefuse-gray text-sm leading-relaxed">High-stakes orthopedic decisions need patient-specific evidence, not generic population averages.</p></div>
-                  <div class="project-soft-card"><h4 class="font-bold text-carefuse-navy mb-2">Built</h4><p class="text-carefuse-gray text-sm leading-relaxed">Feature pipelines, calibrated models, SHAP reports, backend APIs, and deployment workflow.</p></div>
-                  <div class="project-soft-card"><h4 class="font-bold text-carefuse-navy mb-2">Impact</h4><p class="text-carefuse-gray text-sm leading-relaxed">Supported pilot discovery with a Brazilian healthcare organization serving 10M+ covered lives.</p></div>
-                </div>
-                <div class="flex flex-wrap gap-2 mb-7"><span class="project-mini-pill">Python</span><span class="project-mini-pill">scikit-learn</span><span class="project-mini-pill">XGBoost</span><span class="project-mini-pill">SHAP</span><span class="project-mini-pill">FastAPI</span><span class="project-mini-pill">Docker</span></div>
-                <a class="inline-flex items-center justify-center bg-carefuse-teal text-white px-5 py-3 rounded-lg hover:bg-carefuse-teal/90 transition-colors font-semibold" href="/carefuse/">CareFuse</a>
-              </div>
+              <a class="inline-flex items-center text-carefuse-teal font-semibold hover:text-carefuse-teal/80 transition-colors" href="/carefuse/">Read CareFuse case study<svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-carefuse-light p-6">
+              <p class="text-sm font-semibold uppercase tracking-wide text-carefuse-teal mb-4">Evidence</p>
+              <dl class="space-y-4">
+                <div><dt class="text-carefuse-navy font-bold">AUC ≈ 0.93, calibrated</dt><dd class="text-carefuse-gray text-sm">Validated outcome models with calibration and SHAP explanations.</dd></div>
+                <div><dt class="text-carefuse-navy font-bold">FastAPI + Docker</dt><dd class="text-carefuse-gray text-sm">Reproducible deployment path for model serving and internal tooling.</dd></div>
+                <div><dt class="text-carefuse-navy font-bold">10M+ covered lives</dt><dd class="text-carefuse-gray text-sm">Pilot discovery with a major Brazilian healthcare organization.</dd></div>
+              </dl>
             </div>
           </div>
         </article>
 
-        <article class="project-card rounded-2xl overflow-hidden">
-          <div class="project-card-accent"></div>
-          <div class="p-6 sm:p-8 lg:p-10">
-            <div class="grid grid-cols-1 lg:grid-cols-[1fr_0.85fr] gap-8 items-start">
-              <div>
-                <div class="flex items-center gap-4 mb-5"><div class="project-icon" style="background:#2563eb;">02</div><div><h3 class="text-3xl font-bold text-carefuse-navy">Automated Motor Controller Validation</h3><p class="text-carefuse-teal font-semibold">Electrical Engineering Intern, DeWALT</p></div></div>
-                <div class="flex flex-wrap gap-2 mb-5"><span class="project-pill">Embedded systems</span><span class="project-pill">Test automation</span><span class="project-pill">Electrical design</span></div>
-                <p class="text-lg text-carefuse-gray leading-relaxed mb-6"><strong>Designed and built an embedded test fixture</strong> for DeWALT motor-controller validation, including PCB design, MSP432 firmware, thermocouple sensing, I2C driver work, and high-current test bring-up.</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6"><div class="project-soft-card"><h4 class="font-bold text-carefuse-navy mb-2">Problem</h4><p class="text-carefuse-gray text-sm">Manual validation was slow and hard to repeat.</p></div><div class="project-soft-card"><h4 class="font-bold text-carefuse-navy mb-2">Built</h4><p class="text-carefuse-gray text-sm">Fixture electronics, enclosure wiring, firmware, logging, and operator workflow.</p></div><div class="project-soft-card"><h4 class="font-bold text-carefuse-navy mb-2">Impact</h4><p class="text-carefuse-gray text-sm">Saved 4+ hours and improved repeatability for hardware validation.</p></div></div>
-                <div class="flex flex-wrap gap-2"><span class="project-mini-pill">MSP432</span><span class="project-mini-pill">Altium</span><span class="project-mini-pill">I2C</span><span class="project-mini-pill">Thermocouples</span><span class="project-mini-pill">C firmware</span></div>
+        <!-- 02 DeWALT -->
+        <article class="rounded-2xl border border-gray-200 bg-white shadow-sm p-8 transition-shadow hover:shadow-md hover:border-gray-300">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-wide text-carefuse-teal mb-3">02 / Embedded &amp; Hardware Validation</p>
+              <h3 class="text-2xl sm:text-3xl font-bold text-carefuse-navy mb-2">Automated Motor Controller Validation</h3>
+              <p class="text-carefuse-teal font-semibold mb-4">Electrical Engineering Intern, DeWALT</p>
+              <p class="text-carefuse-gray leading-relaxed mb-6 max-w-3xl">Designed and built an embedded test fixture for DeWALT motor-controller validation, replacing slow manual testing with a repeatable automated workflow.</p>
+              <ul class="space-y-2 mb-6">
+                <li class="flex gap-2 text-carefuse-gray leading-relaxed"><svg class="w-5 h-5 text-carefuse-teal flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span>Designed the PCB in Altium and wrote MSP432 firmware with I2C drivers and thermocouple sensing.</span></li>
+                <li class="flex gap-2 text-carefuse-gray leading-relaxed"><svg class="w-5 h-5 text-carefuse-teal flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span>Built fixture electronics, enclosure wiring, logging, and a simple operator workflow.</span></li>
+                <li class="flex gap-2 text-carefuse-gray leading-relaxed"><svg class="w-5 h-5 text-carefuse-teal flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span>Cut test time by roughly 4 hours and improved repeatability for hardware validation.</span></li>
+              </ul>
+              <div class="flex flex-wrap gap-2">
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">MSP432</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Altium</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">I2C</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Thermocouples</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">C firmware</span>
               </div>
-              <div class="grid grid-cols-1 gap-4"><img class="project-image rounded-xl border border-gray-200 shadow-sm" src="/images/dewalt_pcb.png" alt="DeWALT validation PCB" /><img class="project-image rounded-xl border border-gray-200 shadow-sm" src="/images/dewalt_team.png" alt="DeWALT internship team" /></div>
+            </div>
+            <figure>
+              <img class="w-full aspect-16x10 object-cover rounded-xl border border-gray-200" src="/images/dewalt_pcb.png" alt="Custom validation PCB designed in Altium for DeWALT motor-controller testing" />
+              <figcaption class="text-sm text-carefuse-gray mt-4">Custom validation PCB designed in Altium for the automated test fixture.</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- 03 Spurr -->
+        <article class="rounded-2xl border border-gray-200 bg-white shadow-sm p-8 transition-shadow hover:shadow-md hover:border-gray-300">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-wide text-carefuse-teal mb-3">03 / Full-Stack Platform</p>
+              <h3 class="text-2xl sm:text-3xl font-bold text-carefuse-navy mb-2">Spurr</h3>
+              <p class="text-carefuse-teal font-semibold mb-4">Founder and Lead Engineer</p>
+              <p class="text-carefuse-gray leading-relaxed mb-6 max-w-3xl">Built a campus platform that helps students find organizations, events, and verified group information without scattered chats or stale calendars.</p>
+              <ul class="space-y-2 mb-6">
+                <li class="flex gap-2 text-carefuse-gray leading-relaxed"><svg class="w-5 h-5 text-carefuse-teal flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span>Designed auth, role-based access control, claims, verification, and moderation flows.</span></li>
+                <li class="flex gap-2 text-carefuse-gray leading-relaxed"><svg class="w-5 h-5 text-carefuse-teal flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span>Built searchable organization and event data on a Next.js + Supabase stack.</span></li>
+                <li class="flex gap-2 text-carefuse-gray leading-relaxed"><svg class="w-5 h-5 text-carefuse-teal flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span>Modeled 160+ organizations, groups, and events in a deployed product.</span></li>
+              </ul>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Next.js</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">TypeScript</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Supabase</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">PostgreSQL</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Vercel</span>
+              </div>
+              <a class="inline-flex items-center text-carefuse-teal font-semibold hover:text-carefuse-teal/80 transition-colors" href="https://spurr.life/" target="_blank" rel="noopener noreferrer">Visit Spurr<svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+            </div>
+            <div class="rounded-xl border border-gray-200 bg-carefuse-light p-6">
+              <p class="text-sm font-semibold uppercase tracking-wide text-carefuse-teal mb-4">Evidence</p>
+              <dl class="space-y-4">
+                <div><dt class="text-carefuse-navy font-bold">160+ groups &amp; events</dt><dd class="text-carefuse-gray text-sm">Organizations, groups, and events modeled in a deployed product.</dd></div>
+                <div><dt class="text-carefuse-navy font-bold">RBAC &amp; moderation</dt><dd class="text-carefuse-gray text-sm">Claims, verification, and role-based access control built in from the start.</dd></div>
+                <div><dt class="text-carefuse-navy font-bold">Shipped on Vercel</dt><dd class="text-carefuse-gray text-sm">Next.js + Supabase stack running live at spurr.life.</dd></div>
+              </dl>
             </div>
           </div>
         </article>
 
-        <article class="project-card rounded-2xl overflow-hidden">
-          <div class="project-card-accent"></div>
-          <div class="p-6 sm:p-8 lg:p-10">
-            <div class="grid grid-cols-1 lg:grid-cols-[0.85fr_1fr] gap-8 items-start">
-              <div class="rounded-2xl border border-gray-200 bg-carefuse-light p-6">
-                <div class="project-icon mb-6" style="background:#7c3aed;">03</div>
-                <h3 class="text-3xl font-bold text-carefuse-navy mb-3">Spurr</h3>
-                <p class="text-carefuse-teal font-semibold mb-5">Founder and Lead Engineer</p>
-                <div class="grid grid-cols-2 gap-3"><div class="bg-white rounded-lg p-3 border border-gray-100"><strong class="text-carefuse-navy block">160+</strong><span class="text-carefuse-gray text-sm">groups and events</span></div><div class="bg-white rounded-lg p-3 border border-gray-100"><strong class="text-carefuse-navy block">RBAC</strong><span class="text-carefuse-gray text-sm">claims and moderation</span></div></div>
-              </div>
-              <div>
-                <div class="flex flex-wrap gap-2 mb-5"><span class="project-pill">Full-stack platform</span><span class="project-pill">Campus discovery</span><span class="project-pill">Product systems</span></div>
-                <p class="text-lg text-carefuse-gray leading-relaxed mb-6"><strong>Built a campus platform</strong> that helps students find organizations, events, and verified group information without scattered chats or stale calendars.</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6"><div class="project-soft-card"><h4 class="font-bold text-carefuse-navy mb-2">Problem</h4><p class="text-carefuse-gray text-sm">Campus discovery was fragmented across chats, flyers, and outdated calendars.</p></div><div class="project-soft-card"><h4 class="font-bold text-carefuse-navy mb-2">Built</h4><p class="text-carefuse-gray text-sm">Auth, RBAC, claims, verification, moderation, and searchable org/event data.</p></div><div class="project-soft-card"><h4 class="font-bold text-carefuse-navy mb-2">Impact</h4><p class="text-carefuse-gray text-sm">Modeled 160+ organizations, groups, and events in a deployable product.</p></div></div>
-                <div class="flex flex-wrap gap-2 mb-7"><span class="project-mini-pill">Next.js</span><span class="project-mini-pill">TypeScript</span><span class="project-mini-pill">Supabase</span><span class="project-mini-pill">PostgreSQL</span><span class="project-mini-pill">Vercel</span></div>
-                <a class="inline-flex items-center justify-center bg-carefuse-teal text-white px-5 py-3 rounded-lg hover:bg-carefuse-teal/90 transition-colors font-semibold" href="https://spurr.life/" target="_blank" rel="noopener noreferrer">Visit Spurr</a>
+        <!-- 04 RHIB -->
+        <article class="rounded-2xl border border-gray-200 bg-white shadow-sm p-8 transition-shadow hover:shadow-md hover:border-gray-300">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-wide text-carefuse-teal mb-3">04 / Robotics &amp; Electrical Systems</p>
+              <h3 class="text-2xl sm:text-3xl font-bold text-carefuse-navy mb-2">Autonomous Hydrofoil RHIB Platform</h3>
+              <p class="text-carefuse-teal font-semibold mb-4">Electrical System Lead, CMAR</p>
+              <p class="text-carefuse-gray leading-relaxed mb-6 max-w-3xl">Designed the electrical backbone for an autonomous hydrofoil RHIB, connecting power, control, sensing, and autonomy into a maintainable system.</p>
+              <ul class="space-y-2 mb-6">
+                <li class="flex gap-2 text-carefuse-gray leading-relaxed"><svg class="w-5 h-5 text-carefuse-teal flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span>Specified motors, batteries, throttles, microcontrollers, and power components.</span></li>
+                <li class="flex gap-2 text-carefuse-gray leading-relaxed"><svg class="w-5 h-5 text-carefuse-teal flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span>Built a CAN backbone with sonar parsing and ROS drivers across subsystems.</span></li>
+                <li class="flex gap-2 text-carefuse-gray leading-relaxed"><svg class="w-5 h-5 text-carefuse-teal flex-shrink-0 mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg><span>Moved the RHIB toward a robust autonomous platform ready for real-world testing.</span></li>
+              </ul>
+              <div class="flex flex-wrap gap-2">
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">CAN</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">ROS</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Sonar</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Power systems</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Marine hardware</span>
               </div>
             </div>
-          </div>
-        </article>
-
-        <article class="project-card rounded-2xl overflow-hidden">
-          <div class="project-card-accent"></div>
-          <div class="p-6 sm:p-8 lg:p-10">
-            <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-8 items-start">
-              <div>
-                <div class="flex items-center gap-4 mb-5"><div class="project-icon" style="background:#f97316;">04</div><div><h3 class="text-3xl font-bold text-carefuse-navy">Autonomous Hydrofoil RHIB Platform</h3><p class="text-carefuse-teal font-semibold">Electrical System Lead, CMAR</p></div></div>
-                <div class="flex flex-wrap gap-2 mb-5"><span class="project-pill">Marine robotics</span><span class="project-pill">Electrical architecture</span><span class="project-pill">CAN integration</span></div>
-                <p class="text-lg text-carefuse-gray leading-relaxed mb-6"><strong>Designed the electrical backbone</strong> for an autonomous hydrofoil RHIB: motors, batteries, throttles, microcontrollers, power components, sonar parsing, ROS drivers, and CAN-connected subsystems.</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6"><div class="project-soft-card"><h4 class="font-bold text-carefuse-navy mb-2">Problem</h4><p class="text-carefuse-gray text-sm">Marine autonomy needs reliable power, control, safety, and maintainable wiring.</p></div><div class="project-soft-card"><h4 class="font-bold text-carefuse-navy mb-2">Built</h4><p class="text-carefuse-gray text-sm">System architecture, component selection, CAN backbone, and integration plan.</p></div><div class="project-soft-card"><h4 class="font-bold text-carefuse-navy mb-2">Impact</h4><p class="text-carefuse-gray text-sm">Moved the RHIB toward a robust autonomous platform ready for real-world testing.</p></div></div>
-                <div class="flex flex-wrap gap-2"><span class="project-mini-pill">CAN</span><span class="project-mini-pill">ROS</span><span class="project-mini-pill">Sonar</span><span class="project-mini-pill">Power systems</span><span class="project-mini-pill">Marine hardware</span></div>
-              </div>
-              <figure class="rounded-2xl border border-gray-200 bg-white p-3 shadow-sm"><img class="project-diagram rounded-xl" src="/images/zodiac-miro.jpg" alt="Autonomous RHIB electrical architecture diagram" /><figcaption class="text-sm text-carefuse-gray mt-3 px-1">RHIB electrical architecture diagram: port, starboard, brain, batteries, CAN, USB, safety, and actuator subsystems.</figcaption></figure>
-            </div>
+            <figure class="rounded-xl border border-gray-200 bg-white p-3">
+              <img class="w-full aspect-16x10 object-contain rounded-lg bg-white" src="/images/zodiac-miro.jpg" alt="RHIB electrical architecture diagram showing port, starboard, brain, batteries, CAN, USB, safety, and actuator subsystems" />
+              <figcaption class="text-sm text-carefuse-gray mt-4">Electrical architecture: port, starboard, brain, batteries, CAN, safety, and actuator subsystems.</figcaption>
+            </figure>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="py-20 sm:py-24 bg-carefuse-light">
+  <!-- Other Technical Projects -->
+  <section class="py-20 bg-carefuse-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-12"><p class="project-section-title mb-3">05-08</p><h2 class="text-3xl sm:text-4xl font-bold text-carefuse-navy mb-4">Other Technical Projects</h2><p class="text-xl text-carefuse-gray max-w-3xl">Smaller builds, still practical: embedded sensing, robotics hardware, signal processing, and edge compute.</p></div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <article class="project-card rounded-xl p-6"><div class="flex items-center gap-4 mb-4"><div class="project-icon" style="background:#0891b2;">05</div><h3 class="text-xl font-bold text-carefuse-navy">Edge AI Low-Power Drone Detection</h3></div><p class="text-carefuse-gray leading-relaxed mb-4"><strong>Built a low-power sensing pipeline</strong> for real-time drone/noise detection on Raspberry Pi Zero 2W.</p><div class="flex flex-wrap gap-2"><span class="project-mini-pill">Python</span><span class="project-mini-pill">Edge AI</span><span class="project-mini-pill">Signal processing</span><span class="project-mini-pill">Embedded Linux</span></div></article>
-        <article class="project-card rounded-xl p-6"><div class="flex items-center gap-4 mb-4"><div class="project-icon" style="background:#475569;">06</div><h3 class="text-xl font-bold text-carefuse-navy">Humanoid Robot Pandora</h3></div><p class="text-carefuse-gray leading-relaxed mb-4"><strong>Integrated sensing, PCB, and firmware systems</strong> for a humanoid robotics research platform.</p><div class="flex flex-wrap gap-2"><span class="project-mini-pill">C/C++</span><span class="project-mini-pill">Firmware</span><span class="project-mini-pill">Sensors</span><span class="project-mini-pill">PCB</span><span class="project-mini-pill">Robotics</span></div></article>
-        <article class="project-card rounded-xl p-6"><div class="flex items-center gap-4 mb-4"><div class="project-icon" style="background:#e11d48;">07</div><h3 class="text-xl font-bold text-carefuse-navy">Infrared Radioteletype</h3></div><p class="text-carefuse-gray leading-relaxed mb-4"><strong>Designed an IR communication system</strong> using optical transmission, analog filtering, and embedded control.</p><div class="flex flex-wrap gap-2"><span class="project-mini-pill">Arduino</span><span class="project-mini-pill">Photodiode</span><span class="project-mini-pill">Butterworth filters</span><span class="project-mini-pill">Analog circuits</span></div></article>
-        <article class="project-card rounded-xl p-6"><div class="flex items-center gap-4 mb-4"><div class="project-icon" style="background:#57534e;">08</div><h3 class="text-xl font-bold text-carefuse-navy">Smart Home System</h3></div><p class="text-carefuse-gray leading-relaxed mb-4"><strong>Designed a PCB-centered edge compute concept</strong> tying Raspberry Pi GPIO, power breakout, storage, and automation hardware together.</p><div class="flex flex-wrap gap-2"><span class="project-mini-pill">PCB</span><span class="project-mini-pill">Raspberry Pi</span><span class="project-mini-pill">GPIO</span><span class="project-mini-pill">NVMe</span><span class="project-mini-pill">Edge compute</span></div></article>
+      <div class="mb-12 max-w-3xl">
+        <p class="uppercase tracking-wide text-carefuse-teal text-sm font-semibold mb-3">Additional Builds</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-carefuse-navy mb-4">Other Technical Projects</h2>
+        <p class="text-carefuse-gray leading-relaxed">Smaller builds across embedded sensing, robotics hardware, signal processing, and edge compute.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <article class="rounded-2xl border border-gray-200 bg-white shadow-sm p-8 transition-shadow hover:shadow-md hover:border-gray-300 flex flex-col">
+          <p class="text-sm font-medium text-carefuse-gray mb-2">Edge AI</p>
+          <h3 class="text-xl font-bold text-carefuse-navy mb-2">Edge AI Low-Power Drone Detection</h3>
+          <p class="text-carefuse-gray leading-relaxed mb-4 flex-1">A low-power sensing pipeline for real-time drone and noise detection on a Raspberry Pi Zero 2W.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Python</span>
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Edge AI</span>
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Signal processing</span>
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Embedded Linux</span>
+          </div>
+        </article>
+        <article class="rounded-2xl border border-gray-200 bg-white shadow-sm p-8 transition-shadow hover:shadow-md hover:border-gray-300 flex flex-col">
+          <p class="text-sm font-medium text-carefuse-gray mb-2">Robotics</p>
+          <h3 class="text-xl font-bold text-carefuse-navy mb-2">Humanoid Robot Pandora</h3>
+          <p class="text-carefuse-gray leading-relaxed mb-4 flex-1">Integrated sensing, PCB, and firmware systems for a humanoid robotics research platform.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">C/C++</span>
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Firmware</span>
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Sensors</span>
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">PCB</span>
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Robotics</span>
+          </div>
+        </article>
+        <article class="rounded-2xl border border-gray-200 bg-white shadow-sm p-8 transition-shadow hover:shadow-md hover:border-gray-300 flex flex-col">
+          <p class="text-sm font-medium text-carefuse-gray mb-2">Analog Circuits</p>
+          <h3 class="text-xl font-bold text-carefuse-navy mb-2">Infrared Radioteletype</h3>
+          <p class="text-carefuse-gray leading-relaxed mb-4 flex-1">An IR communication system using optical transmission, analog filtering, and embedded control.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Arduino</span>
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Photodiode</span>
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Butterworth filters</span>
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Analog circuits</span>
+          </div>
+        </article>
+        <article class="rounded-2xl border border-gray-200 bg-white shadow-sm p-8 transition-shadow hover:shadow-md hover:border-gray-300 flex flex-col">
+          <p class="text-sm font-medium text-carefuse-gray mb-2">Embedded Linux</p>
+          <h3 class="text-xl font-bold text-carefuse-navy mb-2">Smart Home System</h3>
+          <p class="text-carefuse-gray leading-relaxed mb-4 flex-1">A PCB-centered edge compute concept tying Raspberry Pi GPIO, power breakout, storage, and automation hardware together.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">PCB</span>
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Raspberry Pi</span>
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">GPIO</span>
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">NVMe</span>
+            <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Edge compute</span>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="py-20 sm:py-24 bg-white">
+  <!-- How I Build -->
+  <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-12"><p class="project-section-title mb-3">Strengths</p><h2 class="text-3xl sm:text-4xl font-bold text-carefuse-navy mb-4">Technical Themes</h2></div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="project-soft-card"><strong class="text-carefuse-navy">Production ML</strong></div><div class="project-soft-card"><strong class="text-carefuse-navy">Experiment design</strong></div><div class="project-soft-card"><strong class="text-carefuse-navy">Embedded firmware</strong></div><div class="project-soft-card"><strong class="text-carefuse-navy">Robotics integration</strong></div><div class="project-soft-card"><strong class="text-carefuse-navy">Hardware bring-up</strong></div><div class="project-soft-card"><strong class="text-carefuse-navy">Full-stack products</strong></div><div class="project-soft-card"><strong class="text-carefuse-navy">Data pipelines</strong></div><div class="project-soft-card"><strong class="text-carefuse-navy">Startup execution</strong></div>
+      <div class="mb-12 max-w-3xl">
+        <p class="uppercase tracking-wide text-carefuse-teal text-sm font-semibold mb-3">Approach</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-carefuse-navy mb-4">How I Build</h2>
+        <p class="text-carefuse-gray leading-relaxed">The same pattern runs through these projects, whether the deliverable is a model, a board, or a platform.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="rounded-2xl border border-gray-200 bg-white p-6">
+          <p class="text-carefuse-teal font-semibold text-sm mb-2">01</p>
+          <h3 class="text-lg font-bold text-carefuse-navy mb-2">Define the system constraint</h3>
+          <p class="text-carefuse-gray text-sm leading-relaxed">Start from the real limit — accuracy, current, latency, or trust — that decides whether the system is usable.</p>
+        </div>
+        <div class="rounded-2xl border border-gray-200 bg-white p-6">
+          <p class="text-carefuse-teal font-semibold text-sm mb-2">02</p>
+          <h3 class="text-lg font-bold text-carefuse-navy mb-2">Build the minimum reliable path</h3>
+          <p class="text-carefuse-gray text-sm leading-relaxed">Ship the smallest end-to-end version that actually works before adding scope or polish.</p>
+        </div>
+        <div class="rounded-2xl border border-gray-200 bg-white p-6">
+          <p class="text-carefuse-teal font-semibold text-sm mb-2">03</p>
+          <h3 class="text-lg font-bold text-carefuse-navy mb-2">Validate with measurable outcomes</h3>
+          <p class="text-carefuse-gray text-sm leading-relaxed">Prove it with calibration, test logs, or repeatable benchmarks — not anecdotes.</p>
+        </div>
+        <div class="rounded-2xl border border-gray-200 bg-white p-6">
+          <p class="text-carefuse-teal font-semibold text-sm mb-2">04</p>
+          <h3 class="text-lg font-bold text-carefuse-navy mb-2">Package the work so others can use it</h3>
+          <p class="text-carefuse-gray text-sm leading-relaxed">Wrap it in APIs, fixtures, docs, or tooling so the result outlives a single demo.</p>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Final CTA -->
   <section class="py-20 bg-carefuse-light">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="rounded-2xl border border-carefuse-teal/20 bg-white p-8 sm:p-10 text-center shadow-sm">
-        <h2 class="text-3xl font-bold text-carefuse-navy mb-4">Want the details behind one of these systems?</h2>
-        <p class="text-lg text-carefuse-gray leading-relaxed max-w-2xl mx-auto mb-8">The fastest next step is the academic story behind the research, robotics, and electrical systems.</p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center"><a class="inline-flex items-center justify-center bg-carefuse-teal text-white px-6 py-3 rounded-lg hover:bg-carefuse-teal/90 transition-colors font-semibold" href="/academics/">Next: Academics</a><a class="inline-flex items-center justify-center border border-carefuse-teal text-carefuse-teal px-6 py-3 rounded-lg hover:bg-carefuse-teal hover:text-white transition-colors font-semibold" href="/contact/">Contact Me</a></div>
+      <div class="rounded-2xl border border-carefuse-teal/20 bg-white p-8 text-center shadow-sm">
+        <h2 class="text-3xl sm:text-4xl font-bold text-carefuse-navy mb-4">Want the technical story behind one of these systems?</h2>
+        <p class="text-carefuse-gray leading-relaxed max-w-3xl mx-auto mb-8">I'm happy to walk through architecture, tradeoffs, validation, and what I would improve next.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a class="inline-flex items-center justify-center bg-carefuse-teal text-white px-6 py-3 rounded-lg hover:bg-carefuse-teal/90 transition-colors font-semibold" href="/contact/">Contact Me</a>
+          <a class="inline-flex items-center justify-center border border-carefuse-teal text-carefuse-teal px-6 py-3 rounded-lg hover:bg-carefuse-teal hover:text-white transition-colors font-semibold" href="/experience/">View Experience</a>
+        </div>
       </div>
     </div>
   </section>
