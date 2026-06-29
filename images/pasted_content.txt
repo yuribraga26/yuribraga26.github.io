@@ -57,7 +57,7 @@ Assets placeholders: headshot, company logos (generic), PDF resume links (we wil
 
 /ece-ambassadors VT ECE Ambassadors (role, outreach, videos)
 
-/campus-involvement (Cru at VT, BYX, club soccer)
+/campus (Cru at VT, BYX, club soccer)
 
 /personal Personal Life (soccer-injury essay + life philosophy)
 
@@ -228,7 +228,7 @@ ece.vt.edu
 YouTube
 YouTube
 
-/campus-involvement
+/campus
 
 Cru at Virginia Tech: Christian community focused on faith, service, mentorship, and leadership.
 BYX (Beta Upsilon Chi): Faith-based fraternity emphasizing brotherhood, service, and character.
