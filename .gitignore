@@ -1,2 +1,6 @@
 *.pdf
 *.log
+!resume/Yuri_Braga_Resume.pdf
+!public/
+!public/resume/
+!public/resume/Yuri_Braga_Resume.pdf

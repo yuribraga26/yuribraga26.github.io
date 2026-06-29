@@ -22,86 +22,45 @@
     <meta name="twitter:description"
         content="Systems projects across healthcare AI, embedded firmware, robotics, hardware validation, full-stack platforms, and electrical design." />
     <link rel="icon" href="/favicon.ico" />
+<style>
+  .nav-dropdown { position: relative; display: inline-flex; align-items: center; padding: 1.4rem 0; }
+  .nav-dropdown-menu { position: absolute; top: 100%; left: 0; min-width: 12rem; display: none; background: white; border: 1px solid #e5e7eb; border-radius: 0.5rem; box-shadow: 0 18px 35px rgba(15, 23, 42, 0.12); padding: 0.5rem; z-index: 60; }
+  .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu { display: block; }
+  .nav-dropdown-menu a { display: block; padding: 0.625rem 0.75rem; border-radius: 0.375rem; color: #374151; font-size: 0.875rem; font-weight: 500; white-space: nowrap; }
+  .nav-dropdown-menu a:hover, .nav-dropdown-menu a:focus { color: #0f766e; background: #f0fdfa; outline: none; }
+</style>
 </head>
 
 <body class="font-sans antialiased">
     <nav class="bg-white/95 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center space-x-8">
-                    <a class="flex items-center space-x-3" href="/">
-                        <img alt="Yuri Braga" loading="lazy" width="32" height="32" class="w-8 h-8"
-                            src="/images/YB_logo.png" />
-                        <span class="text-xl font-bold text-gray-900">Yuri Braga</span>
-                    </a>
-                    <div class="hidden md:flex items-center space-x-8">
-                        <a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium"
-                            href="/">Home</a>
-                        <a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium"
-                            href="/about/">About</a>
-                        <a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium"
-                            href="/carefuse/">CareFuse</a>
-                        <a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium"
-                            href="/experience/">Experience</a>
-                        <a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium"
-                            href="/projects/">Projects</a>
-                        <a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium"
-                            href="/academics/">Academics</a>
-                        <a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium"
-                            href="/campus/">Campus</a>
-                        <a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium"
-                            href="/personal/">Personal</a>
-                        <a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium"
-                            href="/recommendations/">Recommendations</a>
-                        <a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium"
-                            href="/contact/">Contact</a>
-                    </div>
-                </div>
-                <div class="hidden md:flex">
-                    <a class="inline-flex items-center space-x-1 bg-carefuse-teal text-white px-4 py-2 rounded-md hover:bg-carefuse-teal/90 transition-colors text-sm font-medium"
-                        href="/resume/">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="w-4 h-4">
-                            <path d="M12 15V3"></path>
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <path d="m7 10 5 5 5-5"></path>
-                        </svg>
-                        <span>Resume</span>
-                    </a>
-                </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu"
-                        class="text-gray-700 hover:text-carefuse-teal focus:outline-none focus:text-carefuse-teal">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="w-6 h-6">
-                            <path d="M4 5h16"></path>
-                            <path d="M4 12h16"></path>
-                            <path d="M4 19h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex items-center space-x-8">
+        <a class="flex items-center space-x-3" href="/"><img alt="Yuri Braga" loading="lazy" width="32" height="32" class="w-8 h-8" src="/images/YB_logo.png" /><span class="text-xl font-bold text-gray-900">Yuri Braga</span></a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium" href="/">Home</a>
+          <a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium" href="/about/">About</a>
+          <a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium" href="/carefuse/">CareFuse</a>
+          <div class="nav-dropdown"><a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium" href="/experience/" aria-haspopup="true" aria-expanded="false">Experience</a><div class="nav-dropdown-menu" role="menu" aria-label="Experience submenu"><a href="/experience/" role="menuitem">Experience</a><a href="/projects/" role="menuitem">Projects</a></div></div>
+          <div class="nav-dropdown"><a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium" href="/academics/" aria-haspopup="true" aria-expanded="false">Academics</a><div class="nav-dropdown-menu" role="menu" aria-label="Academics submenu"><a href="/academics/" role="menuitem">Academics</a><a href="/campus/" role="menuitem">Campus</a></div></div>
+          <a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium" href="/personal/">Personal</a>
+          <a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium" href="/recommendations/">Recommendations</a>
+          <a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium" href="/contact/">Contact</a>
         </div>
-    </nav>
-
-    <div id="mobile-menu"
-        class="md:hidden hidden bg-white border-b border-gray-200 transition-opacity duration-200 ease-in-out opacity-0">
-        <div class="px-4 pt-4 pb-4 space-y-2">
-            <a class="block text-gray-700 py-2" href="/">Home</a>
-            <a class="block text-gray-700 py-2" href="/about/">About</a>
-            <a class="block text-gray-700 py-2" href="/carefuse/">CareFuse</a>
-            <a class="block text-gray-700 py-2" href="/experience/">Experience</a>
-            <a class="block text-gray-700 py-2" href="/projects/">Projects</a>
-            <a class="block text-gray-700 py-2" href="/academics/">Academics</a>
-            <a class="block text-gray-700 py-2" href="/campus/">Campus</a>
-            <a class="block text-gray-700 py-2" href="/personal/">Personal</a>
-            <a class="block text-gray-700 py-2" href="/recommendations/">Recommendations</a>
-            <a class="block text-gray-700 py-2" href="/contact/">Contact</a>
-            <a class="block text-gray-700 py-2" href="/resume/">Resume</a>
-        </div>
+      </div>
+      <div class="hidden md:flex"><a class="inline-flex items-center space-x-2 bg-carefuse-teal text-white px-4 py-2 rounded-md hover:bg-carefuse-teal/90 transition-colors text-sm font-medium" href="/resume/"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg><span>Resume</span></a></div>
+      <div class="md:hidden"><button id="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu" class="text-gray-700 hover:text-carefuse-teal focus:outline-none focus:text-carefuse-teal"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button></div>
     </div>
+  </div>
+</nav>
+<div id="mobile-menu" class="md:hidden hidden bg-white border-b border-gray-200 transition-opacity duration-200 ease-in-out opacity-0">
+  <div class="px-4 pt-4 pb-4 space-y-1">
+    <a class="block text-gray-700 py-2" href="/">Home</a><a class="block text-gray-700 py-2" href="/about/">About</a><a class="block text-gray-700 py-2" href="/carefuse/">CareFuse</a>
+    <a class="block text-gray-900 py-2 font-medium" href="/experience/">Experience</a><a class="block text-gray-700 py-2 pl-4 border-l border-gray-200 ml-2" href="/projects/">Projects</a>
+    <a class="block text-gray-900 py-2 font-medium" href="/academics/">Academics</a><a class="block text-gray-700 py-2 pl-4 border-l border-gray-200 ml-2" href="/campus/">Campus</a>
+    <a class="block text-gray-700 py-2" href="/personal/">Personal</a><a class="block text-gray-700 py-2" href="/recommendations/">Recommendations</a><a class="block text-gray-700 py-2" href="/contact/">Contact</a><a class="block text-gray-700 py-2" href="/resume/">Resume</a>
+  </div>
+</div>
 
     <main class="min-h-screen overflow-x-hidden bg-white">
         <section class="py-20 bg-white">
@@ -109,12 +68,12 @@
                 <div class="max-w-4xl mx-auto text-center">
                     <p
                         class="inline-flex items-center rounded-full bg-carefuse-light text-carefuse-navy px-4 py-2 text-sm font-medium mb-6">
-                        Ranked portfolio</p>
+                        Selected systems</p>
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-carefuse-navy mb-6">Projects</h1>
-                    <p class="text-xl sm:text-2xl text-carefuse-gray max-w-4xl mx-auto mb-8">Detailed systems I’ve built
+                    <p class="text-xl sm:text-2xl text-carefuse-gray max-w-4xl mx-auto mb-8">Real systems I have built
                         across healthcare AI, embedded firmware, robotics, hardware validation, full-stack platforms,
                         and electrical design.</p>
-                    <p class="text-lg text-carefuse-gray leading-relaxed max-w-4xl mx-auto">I like projects where
+                    <p class="text-lg text-carefuse-gray leading-relaxed max-w-4xl mx-auto">I build projects where
                         software has to survive contact with the real world: messy clinical data, physical hardware,
                         sensors, deployment constraints, customer workflows, and debugging. These projects show how I
                         think through systems from architecture to implementation, validation, and real-world use.</p>
@@ -145,9 +104,8 @@
         <section class="py-16 sm:py-20 bg-carefuse-light">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
-                    <p class="text-sm font-semibold tracking-[0.2em] uppercase text-carefuse-teal mb-4">Featured systems
-                    </p>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-carefuse-navy mb-4">Flagship work</h2>
+                    <p class="text-sm font-semibold tracking-[0.2em] uppercase text-carefuse-teal mb-4">01-04</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-carefuse-navy mb-4">Featured Projects</h2>
                     <p class="text-xl text-carefuse-gray max-w-3xl mx-auto">The first four projects are the clearest
                         expression of how I build: product-minded software, rigorous validation, robotics integration,
                         and hardware that works in the field.</p>
@@ -180,7 +138,7 @@
                                         <div class="rounded-xl bg-carefuse-light p-5">
                                             <h4
                                                 class="text-sm font-semibold uppercase tracking-wider text-carefuse-teal mb-2">
-                                                Why it mattered</h4>
+                                                The problem</h4>
                                             <p class="text-carefuse-gray leading-relaxed">Orthopedic decisions are
                                                 expensive, high-stakes, and often made without patient-specific outcome
                                                 prediction. CareFuse was built to help patients, physicians, and payers
@@ -190,7 +148,7 @@
                                         <div class="rounded-xl bg-carefuse-light p-5">
                                             <h4
                                                 class="text-sm font-semibold uppercase tracking-wider text-carefuse-teal mb-2">
-                                                Problem</h4>
+                                                The problem</h4>
                                             <p class="text-carefuse-gray leading-relaxed">Patients with knee
                                                 osteoarthritis often face uncertainty when choosing between surgery and
                                                 conservative care. Physicians and payers need evidence that is
@@ -302,7 +260,7 @@
                                         <div class="rounded-xl bg-carefuse-light p-5">
                                             <h4
                                                 class="text-sm font-semibold uppercase tracking-wider text-carefuse-teal mb-2">
-                                                Why it mattered</h4>
+                                                The problem</h4>
                                             <p class="text-carefuse-gray leading-relaxed">The existing motor controller
                                                 thermal validation process was manual, repetitive, slow, and difficult
                                                 to standardize. The goal was to automate a multi-hour validation
@@ -311,7 +269,7 @@
                                         <div class="rounded-xl bg-carefuse-light p-5">
                                             <h4
                                                 class="text-sm font-semibold uppercase tracking-wider text-carefuse-teal mb-2">
-                                                Problem</h4>
+                                                The problem</h4>
                                             <p class="text-carefuse-gray leading-relaxed">Manual testing required
                                                 engineers to repeatedly monitor the test setup and collect data over
                                                 long thermal cycles. This created wasted engineering time and made it
@@ -416,7 +374,7 @@
                                         <div class="rounded-xl bg-carefuse-light p-5">
                                             <h4
                                                 class="text-sm font-semibold uppercase tracking-wider text-carefuse-teal mb-2">
-                                                Why it mattered</h4>
+                                                The problem</h4>
                                             <p class="text-carefuse-gray leading-relaxed">Autonomous marine platforms
                                                 need robust electrical and software architecture because they operate in
                                                 noisy, uncertain, real-world environments where sensing, power,
@@ -425,7 +383,7 @@
                                         <div class="rounded-xl bg-carefuse-light p-5">
                                             <h4
                                                 class="text-sm font-semibold uppercase tracking-wider text-carefuse-teal mb-2">
-                                                Problem</h4>
+                                                The problem</h4>
                                             <p class="text-carefuse-gray leading-relaxed">The research platform needed a
                                                 practical architecture for integrating motors, batteries, throttles,
                                                 microcontrollers, sensors, communication protocols, sonar data, and
@@ -525,7 +483,7 @@
                                         <div class="rounded-xl bg-carefuse-light p-5">
                                             <h4
                                                 class="text-sm font-semibold uppercase tracking-wider text-carefuse-teal mb-2">
-                                                Why it mattered</h4>
+                                                The problem</h4>
                                             <p class="text-carefuse-gray leading-relaxed">Finding real community is
                                                 often fragmented across Instagram pages, church websites, word of mouth,
                                                 group chats, outdated calendars, and incomplete event listings. Spurr
@@ -535,7 +493,7 @@
                                         <div class="rounded-xl bg-carefuse-light p-5">
                                             <h4
                                                 class="text-sm font-semibold uppercase tracking-wider text-carefuse-teal mb-2">
-                                                Problem</h4>
+                                                The problem</h4>
                                             <p class="text-carefuse-gray leading-relaxed">People looking for Christian
                                                 community often do not know where to start, and organizations often lack
                                                 a simple way to keep their information accurate, discoverable, and
@@ -641,7 +599,7 @@
                                         <div class="rounded-xl bg-carefuse-light p-5">
                                             <h4
                                                 class="text-sm font-semibold uppercase tracking-wider text-carefuse-teal mb-2">
-                                                Why it mattered</h4>
+                                                The problem</h4>
                                             <p class="text-carefuse-gray leading-relaxed">AI systems need rigorous
                                                 technical evaluation to become useful for real engineering work. This
                                                 project/workstream focused on improving the quality, consistency, and
@@ -650,7 +608,7 @@
                                         <div class="rounded-xl bg-carefuse-light p-5">
                                             <h4
                                                 class="text-sm font-semibold uppercase tracking-wider text-carefuse-teal mb-2">
-                                                Problem</h4>
+                                                The problem</h4>
                                             <p class="text-carefuse-gray leading-relaxed">AI tools often produce
                                                 circuit-design answers that sound plausible but may be incomplete,
                                                 poorly validated, or wrong. The challenge is to create evaluation
@@ -728,9 +686,8 @@
         <section class="py-16 sm:py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
-                    <p class="text-sm font-semibold tracking-[0.2em] uppercase text-carefuse-teal mb-4">Full portfolio
-                    </p>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-carefuse-navy mb-4">Additional systems</h2>
+                    <p class="text-sm font-semibold tracking-[0.2em] uppercase text-carefuse-teal mb-4">05-09</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-carefuse-navy mb-4">Other Technical Projects</h2>
                     <p class="text-xl text-carefuse-gray max-w-3xl mx-auto">These projects are smaller in scope but
                         still show the same pattern: real hardware, constrained systems, and careful implementation.</p>
                 </div>
@@ -917,9 +874,8 @@
         <section class="py-16 sm:py-20 bg-carefuse-light">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
-                    <p class="text-sm font-semibold tracking-[0.2em] uppercase text-carefuse-teal mb-4">Technical themes
-                    </p>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-carefuse-navy mb-4">What these projects demonstrate
+                    <p class="text-sm font-semibold tracking-[0.2em] uppercase text-carefuse-teal mb-4">Strengths</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-carefuse-navy mb-4">Technical Themes
                     </h2>
                     <p class="text-xl text-carefuse-gray max-w-3xl mx-auto">Across software, hardware, and research, the
                         pattern is the same: build carefully, validate honestly, and ship systems that survive real use.

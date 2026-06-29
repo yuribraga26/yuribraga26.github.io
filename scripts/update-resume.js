@@ -57,3 +57,5 @@ for (const destinationPath of [staticExportDestination, sourceTreeDestination]) 
 console.log(`Updated resume PDF from ${resolvedSourcePath}`);
 console.log(`Static export copy: ${staticExportDestination}`);
 console.log(`Source-tree mirror: ${sourceTreeDestination}`);
+console.log(`Served URL: ${resumePdfPath}`);
+console.log('Deployment note: commit both resume/Yuri_Braga_Resume.pdf and public/resume/Yuri_Braga_Resume.pdf before pushing, otherwise GitHub Pages or a future Next build can still serve a stale/404 resume.');

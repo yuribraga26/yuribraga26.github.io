@@ -35,3 +35,10 @@ What the script does:
 - Mirrors the same file to `public/resume/Yuri_Braga_Resume.pdf` for a future source-tree workflow.
 
 If you later restore a Next.js source tree, import the same resume path from the shared config instead of hardcoding the filename in page components.
+
+
+## Deployment gotcha
+
+The canonical PDFs must be committed. This repo ignores generic PDF files, but explicitly allows `resume/Yuri_Braga_Resume.pdf` and `public/resume/Yuri_Braga_Resume.pdf`.
+
+After running the script, verify with `git status --short` and make sure those files are staged or already tracked before pushing.
