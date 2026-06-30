@@ -21,7 +21,7 @@
     <meta name="twitter:title" content="Yuri Braga - Projects" />
     <meta name="twitter:description"
         content="Systems projects across healthcare AI, embedded firmware, robotics, hardware validation, full-stack platforms, and electrical design." />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/images/YB_logo.png" type="image/png" />
 <style>
   .nav-dropdown { position: relative; display: inline-flex; align-items: center; padding: 1.4rem 0; }
   .nav-dropdown-menu { position: absolute; top: 100%; left: 0; min-width: 12rem; display: none; background: white; border: 1px solid #e5e7eb; border-radius: 0.5rem; box-shadow: 0 18px 35px rgba(15, 23, 42, 0.12); padding: 0.5rem; z-index: 60; }
@@ -33,6 +33,15 @@
   .tracking-wide { letter-spacing: 0.05em; }
   .object-contain { object-fit: contain; }
   .aspect-16x10 { aspect-ratio: 16 / 10; }
+  /* Image lightbox (matches Experience / Recommendations pages) */
+  .image-lightbox-overlay { position: fixed; inset: 0; background-color: rgba(17, 24, 39, .85); display: none; align-items: center; justify-content: center; z-index: 9999; padding: 2rem; }
+  .image-lightbox-overlay.active { display: flex; }
+  .image-lightbox-content { position: relative; max-width: 90vw; max-height: 90vh; }
+  .image-lightbox-content img { max-width: 100%; max-height: 90vh; border-radius: 0.75rem; box-shadow: 0 20px 45px rgba(15, 23, 42, .35); }
+  .image-lightbox-overlay button { position: absolute; top: -1.5rem; right: -1.5rem; background-color: rgba(15, 23, 42, .7); color: #fff; border: none; border-radius: 9999px; width: 2.5rem; height: 2.5rem; font-size: 1.5rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background-color .2s ease, transform .2s ease; }
+  .image-lightbox-overlay button:hover { background-color: rgba(20, 184, 166, .9); transform: scale(1.05); }
+  .image-lightbox-overlay button:focus { outline: 2px solid rgba(20, 184, 166, .9); outline-offset: 2px; }
+  body.overflow-hidden { overflow: hidden; }
 </style>
 </head>
 
@@ -46,9 +55,10 @@
           <a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium" href="/">Home</a>
           <a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium" href="/about/">About</a>
           <a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium" href="/carefuse/">CareFuse</a>
+          <a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium" href="/personal/">Personal</a>
           <div class="nav-dropdown"><a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium" href="/experience/" aria-haspopup="true" aria-expanded="false">Experience</a><div class="nav-dropdown-menu" role="menu" aria-label="Experience submenu"><a href="/experience/" role="menuitem">Experience</a><a href="/projects/" role="menuitem">Projects</a></div></div>
           <div class="nav-dropdown"><a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium" href="/academics/" aria-haspopup="true" aria-expanded="false">Academics</a><div class="nav-dropdown-menu" role="menu" aria-label="Academics submenu"><a href="/academics/" role="menuitem">Academics</a><a href="/campus/" role="menuitem">Campus</a></div></div>
-          <a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium" href="/personal/">Personal</a>
+          
           <a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium" href="/recommendations/">Recommendations</a>
           <a class="text-gray-700 hover:text-carefuse-teal transition-colors text-sm font-medium" href="/contact/">Contact</a>
         </div>
@@ -60,10 +70,10 @@
 </nav>
 <div id="mobile-menu" class="md:hidden hidden bg-white border-b border-gray-200 transition-opacity duration-200 ease-in-out opacity-0">
   <div class="px-4 pt-4 pb-4 space-y-1">
-    <a class="block text-gray-700 py-2" href="/">Home</a><a class="block text-gray-700 py-2" href="/about/">About</a><a class="block text-gray-700 py-2" href="/carefuse/">CareFuse</a>
+    <a class="block text-gray-700 py-2" href="/">Home</a><a class="block text-gray-700 py-2" href="/about/">About</a><a class="block text-gray-700 py-2" href="/carefuse/">CareFuse</a><a class="block text-gray-700 py-2" href="/personal/">Personal</a>
     <a class="block text-gray-900 py-2 font-medium" href="/experience/">Experience</a><a class="block text-gray-700 py-2 pl-4 border-l border-gray-200 ml-2" href="/projects/">Projects</a>
     <a class="block text-gray-900 py-2 font-medium" href="/academics/">Academics</a><a class="block text-gray-700 py-2 pl-4 border-l border-gray-200 ml-2" href="/campus/">Campus</a>
-    <a class="block text-gray-700 py-2" href="/personal/">Personal</a><a class="block text-gray-700 py-2" href="/recommendations/">Recommendations</a><a class="block text-gray-700 py-2" href="/contact/">Contact</a><a class="block text-gray-700 py-2" href="/resume/">Resume</a>
+    <a class="block text-gray-700 py-2" href="/recommendations/">Recommendations</a><a class="block text-gray-700 py-2" href="/contact/">Contact</a><a class="block text-gray-700 py-2" href="/resume/">Resume</a>
   </div>
 </div>
 
@@ -244,13 +254,19 @@
                 <span class="inline-flex items-center px-3 py-1 rounded-full bg-carefuse-light text-carefuse-navy text-sm font-medium">Robotics Hardware</span>
               </div>
             </div>
-            <div class="rounded-xl border border-gray-200 bg-carefuse-light p-6">
-              <p class="text-sm font-semibold uppercase tracking-wide text-carefuse-teal mb-4">Scope</p>
-              <dl class="space-y-4">
-                <div><dt class="text-carefuse-navy font-bold">Sensor shield PCB</dt><dd class="text-carefuse-gray text-sm">Board-level integration linking sensors to the robot's embedded stack.</dd></div>
-                <div><dt class="text-carefuse-navy font-bold">Firmware &amp; DAQ</dt><dd class="text-carefuse-gray text-sm">Firmware updates moving sensor data into the robot's control software.</dd></div>
-                <div><dt class="text-carefuse-navy font-bold">Hardware/software co-design</dt><dd class="text-carefuse-gray text-sm">Decisions made across board, firmware, and robotics layers for reliability.</dd></div>
-              </dl>
+            <div class="space-y-6">
+              <div class="rounded-xl border border-gray-200 bg-carefuse-light p-6">
+                <p class="text-sm font-semibold uppercase tracking-wide text-carefuse-teal mb-4">Scope</p>
+                <dl class="space-y-4">
+                  <div><dt class="text-carefuse-navy font-bold">Sensor shield PCB</dt><dd class="text-carefuse-gray text-sm">Board-level integration linking sensors to the robot's embedded stack.</dd></div>
+                  <div><dt class="text-carefuse-navy font-bold">Firmware &amp; DAQ</dt><dd class="text-carefuse-gray text-sm">Firmware updates moving sensor data into the robot's control software.</dd></div>
+                  <div><dt class="text-carefuse-navy font-bold">Hardware/software co-design</dt><dd class="text-carefuse-gray text-sm">Decisions made across board, firmware, and robotics layers for reliability.</dd></div>
+                </dl>
+              </div>
+              <figure class="rounded-xl border border-gray-200 bg-white p-3">
+                <img class="w-full aspect-16x10 object-contain rounded-lg bg-white cursor-pointer hover:opacity-95 transition-opacity" src="/images/projects/trec_poster.png" alt="TREC Humanoid Robot Pandora research poster" data-full-size="/images/projects/trec_poster.png" />
+                <figcaption class="text-sm text-carefuse-gray mt-4">Research poster for Pandora. Click to view full size.</figcaption>
+              </figure>
             </div>
           </div>
         </article>
@@ -351,19 +367,14 @@
     </div>
   </section>
 
-  <!-- Final CTA -->
-  <section class="py-20 bg-carefuse-light">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="rounded-2xl border border-carefuse-teal/20 bg-white p-8 text-center shadow-sm">
-        <h2 class="text-3xl sm:text-4xl font-bold text-carefuse-navy mb-4">Want the technical story behind one of these systems?</h2>
-        <p class="text-carefuse-gray leading-relaxed max-w-3xl mx-auto mb-8">I'm happy to walk through architecture, tradeoffs, validation, and what I would improve next.</p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a class="inline-flex items-center justify-center bg-carefuse-teal text-white px-6 py-3 rounded-lg hover:bg-carefuse-teal/90 transition-colors font-semibold" href="/contact/">Contact Me</a>
-          <a class="inline-flex items-center justify-center border border-carefuse-teal text-carefuse-teal px-6 py-3 rounded-lg hover:bg-carefuse-teal hover:text-white transition-colors font-semibold" href="/experience/">View Experience</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Next -->
+  <div class="mt-12 text-center" style="margin-bottom:2.25rem;">
+    <a class="inline-flex items-center bg-carefuse-teal text-white px-6 py-3 rounded-lg hover:bg-carefuse-teal/90 transition-colors font-medium" href="/academics/">Next: Academics<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right w-4 h-4 ml-2" aria-hidden="true">
+      <path d="M5 12h14"></path>
+      <path d="m12 5 7 7-7 7"></path>
+    </svg>
+    </a>
+  </div>
 </main>
 
     <footer class="bg-gray-900 text-white">
@@ -449,6 +460,67 @@
                 button.setAttribute('aria-expanded', String(isHidden));
             });
         }());
+    </script>
+
+    <div class="image-lightbox-overlay" aria-hidden="true">
+      <div class="image-lightbox-content">
+        <img src="" alt="" />
+        <button type="button" aria-label="Close full size image">&times;</button>
+      </div>
+    </div>
+    <script>
+      (function () {
+        try {
+          var overlay = document.querySelector('.image-lightbox-overlay');
+          if (!overlay) return;
+          var overlayImage = overlay.querySelector('img');
+          var closeButton = overlay.querySelector('button');
+          function openOverlay(img) {
+            overlayImage.src = img.getAttribute('data-full-size') || img.src;
+            overlayImage.alt = img.alt || '';
+            overlay.classList.add('active');
+            overlay.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('overflow-hidden');
+            if (closeButton && typeof closeButton.focus === 'function') {
+              try { closeButton.focus({ preventScroll: true }); } catch (focusError) { closeButton.focus(); }
+            }
+          }
+          function closeOverlay() {
+            overlay.classList.remove('active');
+            overlay.setAttribute('aria-hidden', 'true');
+            overlayImage.src = '';
+            overlayImage.alt = '';
+            document.body.classList.remove('overflow-hidden');
+          }
+          var clickableImages = document.querySelectorAll('img[data-full-size]');
+          clickableImages.forEach(function (img) {
+            img.setAttribute('role', 'button');
+            img.setAttribute('tabindex', '0');
+            img.setAttribute('aria-label', 'View "' + (img.alt || 'project image') + '" in full size');
+            img.addEventListener('click', function () { openOverlay(img); });
+            img.addEventListener('keydown', function (event) {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openOverlay(img);
+              }
+            });
+          });
+          overlay.addEventListener('click', function (event) {
+            if (event.target === overlay) {
+              closeOverlay();
+            }
+          });
+          closeButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            closeOverlay();
+          });
+          document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && overlay.classList.contains('active')) {
+              closeOverlay();
+            }
+          });
+        } catch (e) { console.error('Lightbox error', e); }
+      })();
     </script>
 </body>
 
